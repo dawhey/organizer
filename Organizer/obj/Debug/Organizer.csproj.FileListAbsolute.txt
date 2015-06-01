@@ -1,2 +1,3 @@
 C:\Users\Dawid\Desktop\Visual Studio Projects\Organizer\Organizer\bin\Debug\Organizer.exe.config
 C:\Users\Dawid\Documents\GitHub\organizer\Organizer\bin\Debug\Organizer.exe.config
+D:\Github\organizer\Organizer\bin\Debug\Organizer.exe.config
