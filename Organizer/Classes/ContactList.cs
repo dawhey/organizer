@@ -9,33 +9,48 @@ namespace ContactList {
 		private int size = 0;
         private List<Contact.Contact> list;
 
-		private ContactList() {
+		private ContactList() 
+        {
 			throw new System.Exception("Not implemented");
 		}
-		public void Add(Contact.Contact contact) {
+
+		public void Add(Contact.Contact contact) 
+        {
+            list.Add(contact);
+        }
+
+		public void Remove( int id) 
+        {
+            list.Remove(list.ElementAt(id));
+        }
+
+		public void EditContact(Contact.Contact new_contact, Contact.Contact old_contact)
+        {
+            list.Insert(list.IndexOf(old_contact), new_contact);
+        }
+
+		public List<Contact.Contact> GetAllContacts() 
+        {
+            return list;
+   		}
+
+		public int Count() 
+        {
+            return list.Count;
+        }
+		public Contact.Contact Get(int id) 
+        {
 			throw new System.Exception("Not implemented");
 		}
-		public void Remove(ref int id) {
-			throw new System.Exception("Not implemented");
+
+		public bool IsEmpty() 
+        {
+            if (list.Count == 0)
+                return true;
+            else
+                return false;
 		}
-		public void EditContact(Contact.Contact new_contact, int old_contact_id) {
-			throw new System.Exception("Not implemented");
-		}
-		public Contact.Contact GetAllContacts() {
-			throw new System.Exception("Not implemented");
-		}
-		public int Count() {
-			throw new System.Exception("Not implemented");
-		}
-		public Contact.Contact Get(int id) {
-			throw new System.Exception("Not implemented");
-		}
-		public bool IsEmpty() {
-			throw new System.Exception("Not implemented");
-		}
-		public int Length() {
-			throw new System.Exception("Not implemented");
-		}
+
 		public ContactListIterator CreateIterator() {
 			throw new System.Exception("Not implemented");
 		}

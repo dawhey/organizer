@@ -1,7 +1,16 @@
 using System;
 namespace Contact {
 	public class Address {
-		private String country;
+		
+        public Address(String _country, String _city, String _street, String _zip_code)
+        {
+            Country = _country;
+            City = _city;
+            Street = _street;
+            Zip_code = _zip_code;
+        }
+
+        private String country;
 		public String Country {
 			get {
 				return country;

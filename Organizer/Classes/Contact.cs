@@ -7,9 +7,24 @@ using System.Windows.Forms;
 namespace Contact {
 	public abstract class Contact {
 
-        public Contact(int id, String name, String surname, String email, String phone)
+        public Contact(int id, String type, String name, String surname, String email, String phone)
         {
-            throw new System.Exception("Not implemented");
+            Id = id;
+            Name = name;
+            Surname = surname;
+            Email = email;
+            Phone_number = phone;
+            Type = type;
+        }
+
+        private String type;
+        public String Type {
+            get {
+                return type;
+            }
+            set {
+                type = value;
+            }
         }
 
 		private int id;

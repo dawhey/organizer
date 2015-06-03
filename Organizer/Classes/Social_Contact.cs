@@ -7,10 +7,7 @@ using System.Windows.Forms;
 namespace Contact {
 	public class Social_Contact : Contact  {
 
-        public Social_Contact(int id, String name, String surname, String email, String phone) : base(id, name, surname, email, phone)
-        {
-			throw new System.Exception("Not implemented");
-		}
+        public Social_Contact(int id, String type, String name, String surname, String email, String phone) : base(id, type, name, surname, email, phone) {}
 
 		private String facebook_page;
 		public String Facebook_page {

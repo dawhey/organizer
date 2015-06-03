@@ -8,10 +8,7 @@ namespace Contact {
 
 	public class Business_Contact : Contact  {
 
-        public Business_Contact(int id, String name, String surname, String email, String phone) : base(id, name, surname, email, phone)
-        {
-			throw new System.Exception("Not implemented");
-		}
+        public Business_Contact(int id, String type, String name, String surname, String email, String phone) : base(id, type, name, surname, email, phone) {}
 
 		private String company_name;
 		public String Company_name {
