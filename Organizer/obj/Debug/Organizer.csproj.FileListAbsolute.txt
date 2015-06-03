@@ -1,3 +1,11 @@
 C:\Users\Dawid\Desktop\Visual Studio Projects\Organizer\Organizer\bin\Debug\Organizer.exe.config
 C:\Users\Dawid\Documents\GitHub\organizer\Organizer\bin\Debug\Organizer.exe.config
 D:\Github\organizer\Organizer\bin\Debug\Organizer.exe.config
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\obj\Debug\Organizer.csprojResolveAssemblyReference.cache
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\obj\Debug\Organizer.Form1.resources
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\obj\Debug\Organizer.Properties.Resources.resources
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\obj\Debug\Organizer.csproj.GenerateResource.Cache
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\bin\Debug\Organizer.exe
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\bin\Debug\Organizer.pdb
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\obj\Debug\Organizer.exe
+C:\Users\Dawid\Documents\GitHub\organizer\Organizer\obj\Debug\Organizer.pdb
