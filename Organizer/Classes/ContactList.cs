@@ -6,13 +6,15 @@ using System.Windows.Forms;
 
 namespace ContactList {
 	public class ContactList {
+
 		private int size = 0;
         private List<Contact.Contact> list;
+        private ContactList listInstance = null;
 
 		private ContactList() 
         {
-			throw new System.Exception("Not implemented");
-		}
+            list.Clear();
+        }
 
 		public void Add(Contact.Contact contact) 
         {
@@ -38,6 +40,7 @@ namespace ContactList {
         {
             return list.Count;
         }
+
 		public Contact.Contact Get(int id) 
         {
 			throw new System.Exception("Not implemented");
@@ -54,9 +57,16 @@ namespace ContactList {
 		public ContactListIterator CreateIterator() {
 			throw new System.Exception("Not implemented");
 		}
+
 		public ContactList GetInstance() {
-			throw new System.Exception("Not implemented");
-		}
+            if (listInstance == null)
+            {
+                listInstance = new ContactList();
+                return listInstance;
+            }
+            else
+                return listInstance;
+        }
 
 		private ContactListIterator contactListIterator;
 

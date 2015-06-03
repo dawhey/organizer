@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddContactForm.Designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Business_Contact.cs" />
     <Compile Include="Classes\Contact.cs" />
@@ -51,16 +57,28 @@
     <Compile Include="Classes\ContactListIterator.cs" />
     <Compile Include="Classes\Iterator.cs" />
     <Compile Include="Classes\Social_Contact.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="ContactBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ContactBookForm.Designer.cs">
+      <DependentUpon>ContactBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpeningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpeningForm.Designer.cs">
+      <DependentUpon>OpeningForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactBookForm.resx">
+      <DependentUpon>ContactBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpeningForm.resx">
+      <DependentUpon>OpeningForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -70,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,6 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Media\Pictures\default.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
