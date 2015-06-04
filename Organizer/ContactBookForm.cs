@@ -50,6 +50,7 @@ namespace Organizer
                     sc.Surname = xNode.SelectSingleNode("Surname").InnerText;
                     sc.Email = xNode.SelectSingleNode("Email").InnerText;
                     sc.Phone_number = xNode.SelectSingleNode("Phone_number").InnerText;
+                    
                     list.Add(sc);                    
                     ContactListView.Items.Add(sc.Name + " " + sc.Surname);
                 }
@@ -62,7 +63,7 @@ namespace Organizer
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             xDoc.Load(path + "\\Address Book\\settings.xml");
             XmlNode xNode = xDoc.SelectSingleNode("Contacts");
-           // xNode.RemoveAll();
+            xNode.RemoveAll();
             
             for(iterator.First(); !iterator.IsDone(); iterator.Next())
             {
@@ -88,8 +89,8 @@ namespace Organizer
                 xDoc.DocumentElement.AppendChild(xTop);
             }
             xDoc.Save(path + "\\Address Book\\settings.xml");
-
-            Application.Exit();
+           // Application.Exit();
+            Environment.Exit(1);
         }
 
         private void AddContactClick(object sender, EventArgs e)
