@@ -19,6 +19,7 @@ namespace Contact {
             facebook_page = null;
             birthday_date = null;
             photo_id = null;
+            address = new Address();
         }
 		private String facebook_page;
 		public String Facebook_page {

@@ -10,6 +10,11 @@ namespace Contact {
             Zip_code = _zip_code;
         }
 
+        public Address()
+        {
+
+        }
+
         private String country;
 		public String Country {
 			get {
@@ -46,9 +51,6 @@ namespace Contact {
 				zip_code = value;
 			}
 		}
-
-		private Contact contact;
-
 	}
 
 }

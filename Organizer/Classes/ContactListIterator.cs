@@ -29,6 +29,11 @@ namespace ContactList {
             }
             return _list.Get(_current);
 		}
+        public override int getCurrentIndex()
+        {
+            return _current;
+        }
+
 		public override bool IsDone() {
             if (_current >= _list.Count())
             {
@@ -39,9 +44,6 @@ namespace ContactList {
                 return false;
             }
 		}
-
-		private ContactList contactList;
-
 	}
 
 }

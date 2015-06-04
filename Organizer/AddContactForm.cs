@@ -63,6 +63,11 @@ namespace Organizer
                  newContact.Birthday_date = Convert.ToString(BirthdayDatePicker.Text);
                  newContact.Facebook_page = FacebookTextBox.Text;
                  newContact.Photo_id = PictureBox.ImageLocation;
+
+                 newContact.address.City = CityTextBox.Text;
+                 newContact.address.Country = CountryTextBox.Text;
+                 newContact.address.Street = StreetTextBox.Text;
+                 newContact.address.Zip_code = ZipCodeTextBox.Text;
                  
                  list.Add(newContact);
                  cbf.ContactListView.Items.Add(newContact.Name + " " + newContact.Surname);
@@ -76,6 +81,11 @@ namespace Organizer
                  newContact.Business_phone = BusinessPhoneTextBox.Text;
                  newContact.Company_name = CompanyNameTextBox.Text;
                  newContact.Fax = FaxTextBox.Text;
+
+                 newContact.address.City = CityTextBox.Text;
+                 newContact.address.Country = CountryTextBox.Text;
+                 newContact.address.Street = StreetTextBox.Text;
+                 newContact.address.Zip_code = ZipCodeTextBox.Text;
 
                  list.Add(newContact);
                  cbf.ContactListView.Items.Add(newContact.Name + " " + newContact.Surname);

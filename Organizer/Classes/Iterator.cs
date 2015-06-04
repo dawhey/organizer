@@ -13,6 +13,7 @@ namespace ContactList {
 		public abstract void First();
 		public abstract void Next();
 		public abstract Contact.Contact CurrentItem();
+        public abstract int getCurrentIndex();
 		public abstract bool IsDone();
         //abstract Iterator();
 

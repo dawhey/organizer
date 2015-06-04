@@ -21,6 +21,7 @@ namespace Contact {
             company_name = null;
             fax = null;
             business_phone = null;
+            address = new Address();
         }
 		private String company_name;
 		public String Company_name {
