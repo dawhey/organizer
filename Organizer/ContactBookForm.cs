@@ -187,7 +187,24 @@ namespace Organizer
             ac.Show();
         }
 
+
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonRemoveContact_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                list.Remove(ContactListView.SelectedItems[0].Index);
+                ContactListView.Items.Remove(ContactListView.SelectedItems[0]);
+            }
+            catch { }
+        }
+
+        private void ButtonEditContact_Click(object sender, EventArgs e)
         {
 
         }

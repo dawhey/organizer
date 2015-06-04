@@ -32,6 +32,8 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.ContactListBox = new System.Windows.Forms.GroupBox();
             this.ContactListView = new System.Windows.Forms.ListView();
+            this.ButtonEditContact = new System.Windows.Forms.Button();
+            this.ButtonRemoveContact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.ContactListBox.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +56,8 @@
             // 
             // ContactListBox
             // 
+            this.ContactListBox.Controls.Add(this.ButtonRemoveContact);
+            this.ContactListBox.Controls.Add(this.ButtonEditContact);
             this.ContactListBox.Controls.Add(this.ContactListView);
             this.ContactListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ContactListBox.Location = new System.Drawing.Point(12, 12);
@@ -72,6 +76,28 @@
             this.ContactListView.UseCompatibleStateImageBehavior = false;
             this.ContactListView.View = System.Windows.Forms.View.List;
             this.ContactListView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // ButtonEditContact
+            // 
+            this.ButtonEditContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonEditContact.Location = new System.Drawing.Point(41, 518);
+            this.ButtonEditContact.Name = "ButtonEditContact";
+            this.ButtonEditContact.Size = new System.Drawing.Size(136, 35);
+            this.ButtonEditContact.TabIndex = 1;
+            this.ButtonEditContact.Text = "Edit Contact";
+            this.ButtonEditContact.UseVisualStyleBackColor = true;
+            this.ButtonEditContact.Click += new System.EventHandler(this.ButtonEditContact_Click);
+            // 
+            // ButtonRemoveContact
+            // 
+            this.ButtonRemoveContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonRemoveContact.Location = new System.Drawing.Point(207, 518);
+            this.ButtonRemoveContact.Name = "ButtonRemoveContact";
+            this.ButtonRemoveContact.Size = new System.Drawing.Size(175, 35);
+            this.ButtonRemoveContact.TabIndex = 2;
+            this.ButtonRemoveContact.Text = "Remove Contact";
+            this.ButtonRemoveContact.UseVisualStyleBackColor = true;
+            this.ButtonRemoveContact.Click += new System.EventHandler(this.ButtonRemoveContact_Click);
             // 
             // ContactBookForm
             // 
@@ -96,5 +122,7 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.GroupBox ContactListBox;
         public System.Windows.Forms.ListView ContactListView;
+        private System.Windows.Forms.Button ButtonRemoveContact;
+        private System.Windows.Forms.Button ButtonEditContact;
     }
 }

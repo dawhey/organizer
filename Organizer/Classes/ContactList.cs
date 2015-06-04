@@ -24,7 +24,7 @@ namespace ContactList {
 
 		public void Remove( int id) 
         {
-            list.Remove(list.ElementAt(id));
+            list.RemoveAt(id);
             size--;
         }
 

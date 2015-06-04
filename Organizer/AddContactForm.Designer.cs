@@ -64,6 +64,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SocialGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.BusinessGroupBox.SuspendLayout();
@@ -494,5 +495,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker BirthdayDatePicker;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
