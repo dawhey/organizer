@@ -15,10 +15,12 @@ namespace Organizer
     public partial class ContactBookForm : Form
     {
         ContactList.ContactList list;
-      
+        ContactList.ContactListIterator iterator = new ContactList.ContactListIterator();
+
         public ContactBookForm()
         {
             InitializeComponent();
+            list = ContactList.ContactList.GetInstance();
         }
         
         private void ContactBook_Load(object sender, EventArgs e)
@@ -33,6 +35,25 @@ namespace Organizer
                 xW.WriteEndElement();
                 xW.Close();
             }
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(path + "\\Address Book\\settings.xml");
+           
+            string type_of_contact;
+            foreach( XmlNode xNode in xDoc.SelectNodes("Contacts/Contact"))
+            {
+                type_of_contact = xNode.SelectSingleNode("Type").InnerText;
+                if (type_of_contact == "social")
+                {
+                    Contact.Social_Contact sc = new Contact.Social_Contact();                   
+                    sc.Id = Convert.ToInt16(xNode.SelectSingleNode("Id").InnerText);
+                    sc.Name = xNode.SelectSingleNode("Name").InnerText;
+                    sc.Surname = xNode.SelectSingleNode("Surname").InnerText;
+                    sc.Email = xNode.SelectSingleNode("Email").InnerText;
+                    sc.Phone_number = xNode.SelectSingleNode("Phone_number").InnerText;
+                    list.Add(sc);                    
+                    ContactListView.Items.Add(sc.Name + " " + sc.Surname);
+                }
+            }
         }
 
         private void ContactBook_FormClosing(object sender, FormClosingEventArgs e)
@@ -42,19 +63,16 @@ namespace Organizer
             xDoc.Load(path + "\\Address Book\\settings.xml");
             XmlNode xNode = xDoc.SelectSingleNode("Contacts");
            // xNode.RemoveAll();
-
-            ContactList.ContactListIterator iterator = new ContactList.ContactListIterator();
-            //iterator = list.CreateIterator();
             
             for(iterator.First(); !iterator.IsDone(); iterator.Next())
             {
                 XmlNode xTop = xDoc.CreateElement("Contact");
+                XmlNode xType = xDoc.CreateElement("Type");
                 XmlNode xId = xDoc.CreateElement("Id");
                 XmlNode xName = xDoc.CreateElement("Name");
                 XmlNode xSurname = xDoc.CreateElement("Surname");
                 XmlNode xEmail = xDoc.CreateElement("Email");
-                XmlNode xPhone_number = xDoc.CreateElement("Phone_number");
-                XmlNode xType = xDoc.CreateElement("Type_of_contact");
+                XmlNode xPhone_number = xDoc.CreateElement("Phone_number");                
                 xId.InnerText = iterator.CurrentItem().Id.ToString();
                 xName.InnerText = iterator.CurrentItem().Name;
                 xSurname.InnerText = iterator.CurrentItem().Surname;

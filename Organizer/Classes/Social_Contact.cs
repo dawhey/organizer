@@ -8,7 +8,18 @@ namespace Contact {
 	public class Social_Contact : Contact  {
 
         public Social_Contact(int id, String type, String name, String surname, String email, String phone) : base(id, type, name, surname, email, phone) {}
-
+        public Social_Contact()
+        {
+            Id = 0;
+            Type = "social";
+            Name = null;
+            Surname = null;
+            Email = null;
+            Phone_number = null;
+            facebook_page = null;
+            birthday_date = null;
+            photo_id = null;
+        }
 		private String facebook_page;
 		public String Facebook_page {
 			get {

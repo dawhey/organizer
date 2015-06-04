@@ -16,6 +16,10 @@ namespace Contact {
             Phone_number = phone;
             Type = type;
         }
+        public Contact()
+        {
+
+        }
 
         private String type;
         public String Type {
