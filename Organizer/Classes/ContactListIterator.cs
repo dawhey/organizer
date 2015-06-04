@@ -7,22 +7,27 @@ using System.Windows.Forms;
 namespace ContactList {
 	public class ContactListIterator : Iterator  {
 		private List<Contact.Contact> _list;
-		private int current = 0;
+		private int _current = 0;
 
 		public ContactListIterator(List<Contact.Contact> list) {
-			throw new System.Exception("Not implemented");
+            _list = list;
+            _current = 0;
 		}
 		public override void First() {
-			throw new System.Exception("Not implemented");
+            _current = 0;
 		}
 		public override void Next() {
-			throw new System.Exception("Not implemented");
+            _current++;
 		}
 		public override Contact.Contact CurrentItem() {
-			throw new System.Exception("Not implemented");
+            if (IsDone()) {
+                // wywala okno z b³êdem
+                return null;
+            }
+            return _list.ElementAt(_current);
 		}
-		public override bool IsDone() {
-			throw new System.Exception("Not implemented");
+		public override bool IsDone() {     
+            return _current >= _list.Count();
 		}
 
 		private ContactList contactList;
