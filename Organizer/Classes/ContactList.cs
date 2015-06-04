@@ -10,7 +10,7 @@ namespace ContactList {
 		private int size = 0;
         private List<Contact.Contact> list;
         private static ContactList listInstance = null;
-
+        
 		private ContactList() 
         {
             list = new List<Contact.Contact>();
@@ -42,10 +42,10 @@ namespace ContactList {
         {
             return size;
         }
-
+        
 		public Contact.Contact Get(int id) 
         {
-			throw new System.Exception("Not implemented");
+            return list.ElementAt(id);
 		}
 
 		public bool IsEmpty() 
@@ -57,7 +57,8 @@ namespace ContactList {
 		}
 
 		public ContactListIterator CreateIterator() {
-			throw new System.Exception("Not implemented");
+            ContactListIterator iterator = new ContactListIterator();
+            return iterator;
 		}
 
 		public static ContactList GetInstance() {
