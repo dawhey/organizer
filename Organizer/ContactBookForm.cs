@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Organizer
 {
@@ -19,7 +20,11 @@ namespace Organizer
 
         private void ContactBook_Load(object sender, EventArgs e)
         {
-
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            if(!Directory.Exists(path + "\\Address Book"))
+                Directory.CreateDirectory(path + "\\Address Book");
+            if(!File.Exists(path + "\\Address Book\\settings.xml"))
+                File.Create(path + "\\Address Book\\settings.xml");
         }
 
         private void ContactBook_FormClosing(object sender, FormClosingEventArgs e)
