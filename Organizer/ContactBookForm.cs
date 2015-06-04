@@ -34,8 +34,15 @@ namespace Organizer
 
         private void AddContactClick(object sender, EventArgs e)
         {
-            AddContactForm ac = new AddContactForm();
+            AddContactForm ac = new AddContactForm(this);
             ac.Show();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

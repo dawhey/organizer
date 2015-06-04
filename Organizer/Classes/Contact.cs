@@ -36,6 +36,7 @@ namespace Contact {
 				id = value;
 			}
 		}
+
 		private String name;
 		public String Name {
 			get {
@@ -45,12 +46,17 @@ namespace Contact {
 				name = value;
 			}
 		}
+
 		private String surname;
 		public String Surname {
-			set {
+            get{
+                return surname;
+            }
+            set {
 				surname = value;
 			}
 		}
+
 		private String email;
 		public String Email {
 			get {
@@ -60,6 +66,7 @@ namespace Contact {
 				email = value;
 			}
 		}
+
 		private String phone_number;
 		public String Phone_number {
 			get {

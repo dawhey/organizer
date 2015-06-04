@@ -12,11 +12,19 @@ namespace Organizer
 {
     public partial class AddContactForm : Form
     {
-        public AddContactForm()
+        ContactList.ContactList list;
+        ContactBookForm cbf;
+
+        //konstruktor przyjmuje ContactBookForm zeby miec dostep do kontrolki listy(dodanie kontaktu)
+        public AddContactForm(ContactBookForm form)
         {
             InitializeComponent();
             SocialGroupBox.Visible = false;
             BusinessGroupBox.Visible = false;
+
+            cbf = form;
+
+            list = ContactList.ContactList.GetInstance();
         }
 
         private void AddContactForm_Load(object sender, EventArgs e)
@@ -43,6 +51,40 @@ namespace Organizer
                 SocialGroupBox.Visible = false;
                 BusinessGroupBox.Visible = true;
             }
+        }
+
+        private void AddContactButton_Click(object sender, EventArgs e)
+        {
+             if (SocialButton.Checked)
+             {
+                 Contact.Social_Contact newContact;
+
+                 newContact = new Contact.Social_Contact(list.Count(), "social", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneTextBox.Text);
+                 newContact.Birthday_date = Convert.ToString(BirthdayDatePicker.Text);
+                 newContact.Facebook_page = FacebookTextBox.Text;
+                 newContact.Photo_id = PictureBox.ImageLocation;
+                 
+                 list.Add(newContact);
+                 cbf.ContactListView.Items.Add(newContact.Name + " " + newContact.Surname);
+
+             }
+             else if (BusinessButton.Checked)
+             {
+                 Contact.Business_Contact newContact;
+
+                 newContact = new Contact.Business_Contact(list.Count(), "business", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneTextBox.Text);
+                 newContact.Business_phone = BusinessPhoneTextBox.Text;
+                 newContact.Company_name = CompanyNameTextBox.Text;
+                 newContact.Fax = FaxTextBox.Text;
+
+                 list.Add(newContact);
+                 cbf.ContactListView.Items.Add(newContact.Name + " " + newContact.Surname);
+
+             }
+
+             //zamykanie forma po dodanie kontaktu
+             this.Close();
+             cbf.Show();
         }
     }
 }
