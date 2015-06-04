@@ -31,7 +31,7 @@
             this.ButtonAddContact = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.ContactListBox = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.ContactListView = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.ContactListBox.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             // 
             // ContactListBox
             // 
-            this.ContactListBox.Controls.Add(this.listView1);
+            this.ContactListBox.Controls.Add(this.ContactListView);
             this.ContactListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ContactListBox.Location = new System.Drawing.Point(12, 12);
             this.ContactListBox.Name = "ContactListBox";
@@ -63,13 +63,15 @@
             this.ContactListBox.TabStop = false;
             this.ContactListBox.Text = "Contact List";
             // 
-            // listView1
+            // ContactListView
             // 
-            this.listView1.Location = new System.Drawing.Point(6, 25);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(407, 452);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.ContactListView.Location = new System.Drawing.Point(6, 25);
+            this.ContactListView.Name = "ContactListView";
+            this.ContactListView.Size = new System.Drawing.Size(407, 452);
+            this.ContactListView.TabIndex = 0;
+            this.ContactListView.UseCompatibleStateImageBehavior = false;
+            this.ContactListView.View = System.Windows.Forms.View.List;
+            this.ContactListView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // ContactBookForm
             // 
@@ -93,6 +95,6 @@
         private System.Windows.Forms.Button ButtonAddContact;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.GroupBox ContactListBox;
-        private System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.ListView ContactListView;
     }
 }

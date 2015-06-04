@@ -41,6 +41,7 @@
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.AddContactButton = new System.Windows.Forms.Button();
             this.SocialGroupBox = new System.Windows.Forms.GroupBox();
+            this.BirthdayDatePicker = new System.Windows.Forms.DateTimePicker();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.FacebookTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.BirthdayDatePicker = new System.Windows.Forms.DateTimePicker();
             this.SocialGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.BusinessGroupBox.SuspendLayout();
@@ -189,6 +189,7 @@
             this.AddContactButton.TabIndex = 15;
             this.AddContactButton.Text = "Add Contact ";
             this.AddContactButton.UseVisualStyleBackColor = true;
+            this.AddContactButton.Click += new System.EventHandler(this.AddContactButton_Click);
             // 
             // SocialGroupBox
             // 
@@ -203,6 +204,13 @@
             this.SocialGroupBox.TabIndex = 0;
             this.SocialGroupBox.TabStop = false;
             this.SocialGroupBox.Text = "Social Contact";
+            // 
+            // BirthdayDatePicker
+            // 
+            this.BirthdayDatePicker.Location = new System.Drawing.Point(196, 171);
+            this.BirthdayDatePicker.Name = "BirthdayDatePicker";
+            this.BirthdayDatePicker.Size = new System.Drawing.Size(200, 29);
+            this.BirthdayDatePicker.TabIndex = 5;
             // 
             // PictureBox
             // 
@@ -417,13 +425,6 @@
             this.label3.Size = new System.Drawing.Size(80, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Country:";
-            // 
-            // BirthdayDatePicker
-            // 
-            this.BirthdayDatePicker.Location = new System.Drawing.Point(196, 171);
-            this.BirthdayDatePicker.Name = "BirthdayDatePicker";
-            this.BirthdayDatePicker.Size = new System.Drawing.Size(200, 29);
-            this.BirthdayDatePicker.TabIndex = 5;
             // 
             // AddContactForm
             // 

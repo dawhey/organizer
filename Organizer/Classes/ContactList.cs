@@ -9,21 +9,23 @@ namespace ContactList {
 
 		private int size = 0;
         private List<Contact.Contact> list;
-        private ContactList listInstance = null;
+        private static ContactList listInstance = null;
 
 		private ContactList() 
         {
-            list.Clear();
+            list = new List<Contact.Contact>();
         }
 
 		public void Add(Contact.Contact contact) 
         {
             list.Add(contact);
+            size++;
         }
 
 		public void Remove( int id) 
         {
             list.Remove(list.ElementAt(id));
+            size--;
         }
 
 		public void EditContact(Contact.Contact new_contact, Contact.Contact old_contact)
@@ -38,7 +40,7 @@ namespace ContactList {
 
 		public int Count() 
         {
-            return list.Count;
+            return size;
         }
 
 		public Contact.Contact Get(int id) 
@@ -58,13 +60,11 @@ namespace ContactList {
 			throw new System.Exception("Not implemented");
 		}
 
-		public ContactList GetInstance() {
+		public static ContactList GetInstance() {
             if (listInstance == null)
             {
                 listInstance = new ContactList();
-                return listInstance;
             }
-            else
                 return listInstance;
         }
 
