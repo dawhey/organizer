@@ -262,7 +262,7 @@
             this.BusinessGroupBox.Controls.Add(this.label10);
             this.BusinessGroupBox.Location = new System.Drawing.Point(30, 44);
             this.BusinessGroupBox.Name = "BusinessGroupBox";
-            this.BusinessGroupBox.Size = new System.Drawing.Size(408, 318);
+            this.BusinessGroupBox.Size = new System.Drawing.Size(408, 312);
             this.BusinessGroupBox.TabIndex = 0;
             this.BusinessGroupBox.TabStop = false;
             this.BusinessGroupBox.Text = "Business Contact";

@@ -30,3 +30,14 @@ D:\Github\Organizer\Organizer\obj\Debug\Organizer.ContactBookForm.resources
 D:\Github\Organizer\Organizer\obj\Debug\Organizer.OpeningForm.resources
 D:\Github\Organizer\Organizer\obj\Debug\Organizer.Properties.Resources.resources
 D:\Github\Organizer\Organizer\obj\Debug\Organizer.csproj.GenerateResource.Cache
+D:\Github\organizer2\Organizer\bin\Debug\Organizer.exe.config
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.exe
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.pdb
+D:\Github\organizer2\Organizer\bin\Debug\Organizer.exe
+D:\Github\organizer2\Organizer\bin\Debug\Organizer.pdb
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.csprojResolveAssemblyReference.cache
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.AddContactForm.resources
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.ContactBookForm.resources
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.OpeningForm.resources
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.Properties.Resources.resources
+D:\Github\organizer2\Organizer\obj\Debug\Organizer.csproj.GenerateResource.Cache

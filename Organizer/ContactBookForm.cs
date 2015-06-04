@@ -16,37 +16,28 @@ namespace Organizer
     {
         ContactList.ContactList list;
         ContactList.ContactListIterator iterator = new ContactList.ContactListIterator();
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
         public ContactBookForm()
         {
             InitializeComponent();
             list = ContactList.ContactList.GetInstance();
+            ButtonEditContact.Enabled = false;
+            ButtonRemoveContact.Enabled = false;
         }
-        
-        private void ContactBook_Load(object sender, EventArgs e)
+
+        private void AddItemsToListViewFromXml()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            if(!Directory.Exists(path + "\\Address Book"))
-                Directory.CreateDirectory(path + "\\Address Book");
-            if(!File.Exists(path + "\\Address Book\\settings.xml"))
-            {
-                XmlTextWriter xW = new XmlTextWriter(path + "\\Address Book\\settings.xml", Encoding.UTF8);
-                xW.WriteStartElement("Contacts");
-                xW.WriteEndElement();
-                xW.Close();
-            }
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(path + "\\Address Book\\settings.xml");
-           
-
             //wcztytywanie kontaktow z listy
             string type_of_contact;
-            foreach( XmlNode xNode in xDoc.SelectNodes("Contacts/Contact"))
+            foreach (XmlNode xNode in xDoc.SelectNodes("Contacts/Contact"))
             {
                 type_of_contact = xNode.SelectSingleNode("Type").InnerText;
                 if (type_of_contact == "social")
                 {
-                    Contact.Social_Contact sc = new Contact.Social_Contact();                   
+                    Contact.Social_Contact sc = new Contact.Social_Contact();
                     sc.Id = Convert.ToInt16(xNode.SelectSingleNode("Id").InnerText);
                     sc.Name = xNode.SelectSingleNode("Name").InnerText;
                     sc.Surname = xNode.SelectSingleNode("Surname").InnerText;
@@ -57,12 +48,12 @@ namespace Organizer
                     sc.address.City = xNode.SelectSingleNode("City").InnerText;
                     sc.address.Street = xNode.SelectSingleNode("Street").InnerText;
                     sc.address.Zip_code = xNode.SelectSingleNode("Zip_code").InnerText;
-                    
+
                     sc.Birthday_date = xNode.SelectSingleNode("Birthday_date").InnerText;
                     sc.Facebook_page = xNode.SelectSingleNode("Facebook_page").InnerText;
                     sc.Photo_id = xNode.SelectSingleNode("Photo_id").InnerText;
-                    
-                    list.Add(sc);                    
+
+                    list.Add(sc);
                     ContactListView.Items.Add(sc.Name + " " + sc.Surname);
                 }
                 else if (type_of_contact == "business")
@@ -89,6 +80,31 @@ namespace Organizer
             }
         }
 
+        private void UpdateListViewItems()
+        {
+            ContactListView.Clear();
+            Contact.Contact contact;
+            for (iterator.First(); !iterator.IsDone(); iterator.Next())
+            {
+                contact = iterator.CurrentItem();
+                ContactListView.Items.Add(contact.Name + " " + contact.Surname);
+            }
+        }
+
+        private void ContactBook_Load(object sender, EventArgs e)
+        {
+            
+            if(!Directory.Exists(path + "\\Address Book"))
+                Directory.CreateDirectory(path + "\\Address Book");
+            if(!File.Exists(path + "\\Address Book\\settings.xml"))
+            {
+                XmlTextWriter xW = new XmlTextWriter(path + "\\Address Book\\settings.xml", Encoding.UTF8);
+                xW.WriteStartElement("Contacts");
+                xW.WriteEndElement();
+                xW.Close();
+            }
+            AddItemsToListViewFromXml();            
+        }
         
         private void ContactBook_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -139,7 +155,6 @@ namespace Organizer
                 xTop.AppendChild(xZip_code);
                 xDoc.DocumentElement.AppendChild(xTop);
 
-
                 //zapisywanie socjala
                 if (type_of_contact == "social")
                 {
@@ -173,10 +188,7 @@ namespace Organizer
                     xTop.AppendChild(xBusiness_phone);
                     xTop.AppendChild(xFax);
                 }
-
             }
-
-
             xDoc.Save(path + "\\Address Book\\settings.xml");
             Environment.Exit(1);
         }
@@ -186,29 +198,122 @@ namespace Organizer
             AddContactForm ac = new AddContactForm(this);
             ac.Show();
         }
-
-
-
+        
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Sprawdzenie czy ilość zaznaczonych elementów z listy nie wynosi 0
+            // Podczas przełączania się zaznaczenia SelectedItems.Count wynosiło 
+            // prez pewien okres czasu "0" i następowało odniesienie się do elementu
+            // z zaznaczonej listy, który nie istniał
+            // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+            // kurwa ile siedziałem nad tym gównem
+            if (ContactListView.SelectedItems.Count == 0)
+            {
+                ButtonEditContact.Enabled = false;
+                ButtonRemoveContact.Enabled = false;
+                return;
+            }
+            ButtonEditContact.Enabled = true;
+            ButtonRemoveContact.Enabled = true;  
+            int selected_contact_index = ContactListView.SelectedItems[0].Index;
+            
+            while (selected_contact_index != iterator.getCurrentIndex())
+            {
+                iterator.Next();
+                if (iterator.IsDone())
+                    iterator.First();
+            }
+            
+            if(iterator.CurrentItem().Type == "social")
+            {
+                SocialGroupBox.Visible = true;
+                BusinessGroupBox.Visible = false;
+                Contact.Social_Contact scontact = (Contact.Social_Contact)list.Get(iterator.getCurrentIndex());
+                NameTextBox.Text = iterator.CurrentItem().Name;
+                SurnameTextBox.Text = iterator.CurrentItem().Surname;
+                PhoneNumberTextBox.Text = scontact.Phone_number;
+                EmailTextBox.Text = scontact.Email;
+                CountryTextBox.Text = scontact.address.Country;
+                CityTextBox.Text = scontact.address.City;
+                StreetTextBox.Text = scontact.address.Street;
+                ZipCodeTextBox.Text = scontact.address.Zip_code;
+                BirthdayTextBox.Text = scontact.Birthday_date;
+                FacebookTextBox.Text = scontact.Facebook_page;
+            }
+            else
+            {
+                BusinessGroupBox.Visible = true;
+                SocialGroupBox.Visible = false;
+                Contact.Business_Contact scontact = (Contact.Business_Contact)list.Get(iterator.getCurrentIndex());
+                NameTextBox.Text = iterator.CurrentItem().Name;
+                SurnameTextBox.Text = iterator.CurrentItem().Surname;
+                PhoneNumberTextBox.Text = scontact.Phone_number;
+                EmailTextBox.Text = scontact.Email;
+                CountryTextBox.Text = scontact.address.Country;
+                CityTextBox.Text = scontact.address.City;
+                StreetTextBox.Text = scontact.address.Street;
+                ZipCodeTextBox.Text = scontact.address.Zip_code;
+                CompanyNameTextBox.Text = scontact.Company_name;
+                FaxTextBox.Text = scontact.Fax;
+                BusinessPhoneTextBox.Text = scontact.Business_phone;
+            }
+            ContactPreviewBox.Enabled = false;            
         }
 
         private void ButtonRemoveContact_Click(object sender, EventArgs e)
         {
+            if (ContactListView.SelectedItems.Count == 0)
+                return;
+
+            Remove();
+        }
+        
+        void Remove()
+        {
             try
             {
                 list.Remove(ContactListView.SelectedItems[0].Index);
-                ContactListView.Items.Remove(ContactListView.SelectedItems[0]);
+                ContactListView.Items.Remove(ContactListView.SelectedItems[0]); 
             }
             catch { }
         }
 
         private void ButtonEditContact_Click(object sender, EventArgs e)
         {
-
+            ContactPreviewBox.Enabled = true;
+            DiscardButton.Visible = true;
+            ApplyButton.Visible = true;
         }
 
-
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+           if(iterator.CurrentItem().Type == "business")
+           {
+               Contact.Business_Contact bc;
+               bc = new Contact.Business_Contact(list.Count(), "business", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneNumberTextBox.Text);
+               bc.address.City = CityTextBox.Text;
+               bc.address.Country = CountryTextBox.Text;
+               bc.address.Street = StreetTextBox.Text;
+               bc.address.Zip_code = ZipCodeTextBox.Text;  
+               bc.Business_phone = BusinessPhoneTextBox.Text;
+               bc.Company_name = CompanyNameTextBox.Text;
+               bc.Fax = FaxTextBox.Text;
+               list.EditContact(bc, iterator.CurrentItem());
+           }
+           else if (iterator.CurrentItem().Type == "social")
+           {
+               Contact.Social_Contact sc;
+               sc = new Contact.Social_Contact(list.Count(), "social", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneNumberTextBox.Text);
+               sc.address.City = CityTextBox.Text;
+               sc.address.Country = CountryTextBox.Text;
+               sc.address.Street = StreetTextBox.Text;
+               sc.address.Zip_code = ZipCodeTextBox.Text;
+               sc.Facebook_page = FacebookTextBox.Text;
+               sc.Birthday_date = BirthdayTextBox.Text;
+               list.EditContact(sc, iterator.CurrentItem());
+           }
+           ContactPreviewBox.Enabled = false;
+           UpdateListViewItems();
+        }
     }
 }

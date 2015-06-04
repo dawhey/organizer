@@ -33,7 +33,6 @@ namespace ContactList {
         {
             return _current;
         }
-
 		public override bool IsDone() {
             if (_current >= _list.Count())
             {

@@ -30,7 +30,9 @@ namespace ContactList {
 
 		public void EditContact(Contact.Contact new_contact, Contact.Contact old_contact)
         {
-            list.Insert(list.IndexOf(old_contact), new_contact);
+            int old_position = list.IndexOf(old_contact);
+            list.Remove(old_contact);
+            list.Insert(old_position, new_contact);
         }
 
 		public List<Contact.Contact> GetAllContacts() 
