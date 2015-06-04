@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.ButtonAddContact = new System.Windows.Forms.Button();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.ContactListBox = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.ContactListBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonAddContact
             // 
             this.ButtonAddContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonAddContact.Location = new System.Drawing.Point(132, 603);
+            this.ButtonAddContact.Location = new System.Drawing.Point(84, 615);
             this.ButtonAddContact.Name = "ButtonAddContact";
             this.ButtonAddContact.Size = new System.Drawing.Size(257, 43);
             this.ButtonAddContact.TabIndex = 0;
@@ -42,16 +47,43 @@
             this.ButtonAddContact.UseVisualStyleBackColor = true;
             this.ButtonAddContact.Click += new System.EventHandler(this.AddContactClick);
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // ContactListBox
+            // 
+            this.ContactListBox.Controls.Add(this.listView1);
+            this.ContactListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ContactListBox.Location = new System.Drawing.Point(12, 12);
+            this.ContactListBox.Name = "ContactListBox";
+            this.ContactListBox.Size = new System.Drawing.Size(428, 586);
+            this.ContactListBox.TabIndex = 1;
+            this.ContactListBox.TabStop = false;
+            this.ContactListBox.Text = "Contact List";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(6, 25);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(407, 452);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // ContactBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 682);
+            this.ClientSize = new System.Drawing.Size(995, 682);
+            this.Controls.Add(this.ContactListBox);
             this.Controls.Add(this.ButtonAddContact);
             this.Name = "ContactBookForm";
             this.Text = "Contact Book";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContactBook_FormClosing);
             this.Load += new System.EventHandler(this.ContactBook_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.ContactListBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -59,5 +91,8 @@
         #endregion
 
         private System.Windows.Forms.Button ButtonAddContact;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.GroupBox ContactListBox;
+        private System.Windows.Forms.ListView listView1;
     }
 }
