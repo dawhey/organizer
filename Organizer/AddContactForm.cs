@@ -40,8 +40,7 @@ namespace Organizer
             }
             catch
             {
-                //ExceptionForm ep = new ExceptionForm();
-               // ep.Show();
+                MessageBox.Show("Wrong file selected.", "Error", MessageBoxButtons.OK);
             }
         }
 
@@ -69,8 +68,12 @@ namespace Organizer
         private void AddContactButton_Click(object sender, EventArgs e)
         {
             //Aby zapobiec dodawaniu pustych kontaktów
-            if (NameTextBox.Text == null)
+            if (NameTextBox.Text == "")
+            {
+                MessageBox.Show("Fill the 'Name' field first.", "Error",MessageBoxButtons.OK);
                 return;
+            }
+
 
              if (SocialButton.Checked)
              {
@@ -116,9 +119,9 @@ namespace Organizer
         private void AddPhotoBox_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                ofd.ShowDialog();
                 FilePathTextBox.Text = ofd.FileName;
                 UpdatePhotoBox(ofd.FileName);
             }

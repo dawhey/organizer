@@ -121,6 +121,7 @@ namespace Organizer
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             xDoc.Load(path + "\\Address Book\\settings.xml");
             XmlNode xNode = xDoc.SelectSingleNode("Contacts");
+
             xNode.RemoveAll();
             
             //zapisywanie kontaktów do listy
@@ -226,6 +227,11 @@ namespace Organizer
         
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ContactPreviewBox.Enabled == true)
+            {
+                SelectInfoTextBox.Enabled = false;
+            }
+
             // Sprawdzenie czy ilość zaznaczonych elementów z listy nie wynosi 0
             // Podczas przełączania się zaznaczenia SelectedItems.Count wynosiło 
             // prez pewien okres czasu "0" i następowało odniesienie się do elementu
@@ -366,9 +372,9 @@ namespace Organizer
         private void ContactPreviewPhotoBox_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                ofd.ShowDialog();
                 PhotoTextBox.Text = ofd.FileName;
                 UpdatePhotoBox(ofd.FileName);
             }  
@@ -382,6 +388,7 @@ namespace Organizer
                 SurnameTextBox.Text = m.Bcontact.Surname;
                 PhoneNumberTextBox.Text = m.Bcontact.Phone_number;
                 EmailTextBox.Text = m.Bcontact.Email;
+                ContactPreviewPhotoBox.Image = Image.FromFile(m.Bcontact.Photo_path);
                 
                 CountryTextBox.Text = m.Bcontact.address.Country;
                 CityTextBox.Text = m.Bcontact.address.City;
@@ -398,6 +405,7 @@ namespace Organizer
                 SurnameTextBox.Text = m.Scontact.Surname;
                 PhoneNumberTextBox.Text = m.Scontact.Phone_number;
                 EmailTextBox.Text = m.Scontact.Email;
+                ContactPreviewPhotoBox.Image = Image.FromFile(m.Scontact.Photo_path);
 
                 CountryTextBox.Text = m.Scontact.address.Country;
                 CityTextBox.Text = m.Scontact.address.City;

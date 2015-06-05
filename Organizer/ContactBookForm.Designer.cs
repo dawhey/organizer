@@ -35,6 +35,7 @@
             this.ButtonEditContact = new System.Windows.Forms.Button();
             this.ContactListView = new System.Windows.Forms.ListView();
             this.ContactPreviewBox = new System.Windows.Forms.GroupBox();
+            this.SelectInfoTextBox = new System.Windows.Forms.TextBox();
             this.DiscardButton = new System.Windows.Forms.Button();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.BusinessGroupBox = new System.Windows.Forms.GroupBox();
@@ -69,7 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.SelectInfoTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.ContactListBox.SuspendLayout();
             this.ContactPreviewBox.SuspendLayout();
@@ -82,8 +82,8 @@
             // 
             // ButtonAddContact
             // 
-            this.ButtonAddContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ButtonAddContact.Location = new System.Drawing.Point(84, 615);
+            this.ButtonAddContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAddContact.Location = new System.Drawing.Point(352, 617);
             this.ButtonAddContact.Name = "ButtonAddContact";
             this.ButtonAddContact.Size = new System.Drawing.Size(257, 43);
             this.ButtonAddContact.TabIndex = 0;
@@ -159,6 +159,16 @@
             this.ContactPreviewBox.TabStop = false;
             this.ContactPreviewBox.Text = "Contact Preview";
             // 
+            // SelectInfoTextBox
+            // 
+            this.SelectInfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SelectInfoTextBox.Location = new System.Drawing.Point(141, 277);
+            this.SelectInfoTextBox.Name = "SelectInfoTextBox";
+            this.SelectInfoTextBox.Size = new System.Drawing.Size(254, 25);
+            this.SelectInfoTextBox.TabIndex = 28;
+            this.SelectInfoTextBox.Text = "<No contact selected>";
+            this.SelectInfoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // DiscardButton
             // 
             this.DiscardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -193,7 +203,7 @@
             this.BusinessGroupBox.Controls.Add(this.CompanyNameTextBox);
             this.BusinessGroupBox.Controls.Add(this.label11);
             this.BusinessGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BusinessGroupBox.Location = new System.Drawing.Point(6, 362);
+            this.BusinessGroupBox.Location = new System.Drawing.Point(6, 361);
             this.BusinessGroupBox.Name = "BusinessGroupBox";
             this.BusinessGroupBox.Size = new System.Drawing.Size(525, 141);
             this.BusinessGroupBox.TabIndex = 25;
@@ -271,7 +281,7 @@
             // BirthdayTextBox
             // 
             this.BirthdayTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BirthdayTextBox.Location = new System.Drawing.Point(161, 59);
+            this.BirthdayTextBox.Location = new System.Drawing.Point(161, 78);
             this.BirthdayTextBox.Name = "BirthdayTextBox";
             this.BirthdayTextBox.Size = new System.Drawing.Size(358, 27);
             this.BirthdayTextBox.TabIndex = 12;
@@ -280,7 +290,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(6, 66);
+            this.label6.Location = new System.Drawing.Point(14, 78);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 11;
@@ -289,7 +299,7 @@
             // FacebookTextBox
             // 
             this.FacebookTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FacebookTextBox.Location = new System.Drawing.Point(161, 26);
+            this.FacebookTextBox.Location = new System.Drawing.Point(161, 36);
             this.FacebookTextBox.Name = "FacebookTextBox";
             this.FacebookTextBox.Size = new System.Drawing.Size(358, 27);
             this.FacebookTextBox.TabIndex = 10;
@@ -298,7 +308,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(7, 33);
+            this.label5.Location = new System.Drawing.Point(14, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 10;
@@ -507,16 +517,6 @@
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email:";
-            // 
-            // SelectInfoTextBox
-            // 
-            this.SelectInfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SelectInfoTextBox.Location = new System.Drawing.Point(141, 277);
-            this.SelectInfoTextBox.Name = "SelectInfoTextBox";
-            this.SelectInfoTextBox.Size = new System.Drawing.Size(254, 25);
-            this.SelectInfoTextBox.TabIndex = 28;
-            this.SelectInfoTextBox.Text = "<No contact selected>";
-            this.SelectInfoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ContactBookForm
             // 
