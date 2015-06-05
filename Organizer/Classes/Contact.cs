@@ -23,6 +23,19 @@ namespace Contact {
 
         }
 
+        private String photo_path;
+        public String Photo_path
+        {
+            get
+            {
+                return photo_path;
+            }
+            set
+            {
+                photo_path = value;
+            }
+        }
+
         private String type;
         public String Type {
             get {

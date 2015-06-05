@@ -21,7 +21,20 @@ namespace Contact {
             company_name = null;
             fax = null;
             business_phone = null;
+           // photo_path = null;
             address = new Address();
+        }
+        private String photo_path;
+        public String Photo_path
+        {
+            get
+            {
+                return photo_path;
+            }
+            set
+            {
+                photo_path = value;
+            }
         }
 		private String company_name;
 		public String Company_name {

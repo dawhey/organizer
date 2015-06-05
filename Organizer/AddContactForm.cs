@@ -60,6 +60,7 @@ namespace Organizer
                  Contact.Social_Contact newContact;
 
                  newContact = new Contact.Social_Contact(list.Count(), "social", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneTextBox.Text);
+                 newContact.Photo_path = PhotoPathTextBox.Text;
                  newContact.Birthday_date = Convert.ToString(BirthdayDatePicker.Text);
                  newContact.Facebook_page = FacebookTextBox.Text;
                  newContact.Photo_id = PictureBox.ImageLocation;
@@ -78,6 +79,7 @@ namespace Organizer
                  Contact.Business_Contact newContact;
 
                  newContact = new Contact.Business_Contact(list.Count(), "business", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneTextBox.Text);
+                 newContact.Photo_path = PhotoPathTextBox.Text;                 
                  newContact.Business_phone = BusinessPhoneTextBox.Text;
                  newContact.Company_name = CompanyNameTextBox.Text;
                  newContact.Fax = FaxTextBox.Text;

@@ -46,13 +46,6 @@
             this.FacebookTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.BusinessGroupBox = new System.Windows.Forms.GroupBox();
-            this.BusinessPhoneTextBox = new System.Windows.Forms.TextBox();
-            this.FaxTextBox = new System.Windows.Forms.TextBox();
-            this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -65,12 +58,21 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.label15 = new System.Windows.Forms.Label();
+            this.PhotoPathTextBox = new System.Windows.Forms.TextBox();
+            this.BusinessGroupBox = new System.Windows.Forms.GroupBox();
+            this.BusinessPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.FaxTextBox = new System.Windows.Forms.TextBox();
+            this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SocialGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
-            this.BusinessGroupBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.BusinessGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -227,7 +229,7 @@
             // 
             // FacebookTextBox
             // 
-            this.FacebookTextBox.Location = new System.Drawing.Point(196, 232);
+            this.FacebookTextBox.Location = new System.Drawing.Point(196, 220);
             this.FacebookTextBox.Name = "FacebookTextBox";
             this.FacebookTextBox.Size = new System.Drawing.Size(200, 29);
             this.FacebookTextBox.TabIndex = 3;
@@ -236,7 +238,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(32, 237);
+            this.label14.Location = new System.Drawing.Point(32, 225);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(148, 24);
             this.label14.TabIndex = 1;
@@ -252,71 +254,10 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Birthday date:";
             // 
-            // BusinessGroupBox
-            // 
-            this.BusinessGroupBox.Controls.Add(this.BusinessPhoneTextBox);
-            this.BusinessGroupBox.Controls.Add(this.FaxTextBox);
-            this.BusinessGroupBox.Controls.Add(this.CompanyNameTextBox);
-            this.BusinessGroupBox.Controls.Add(this.label12);
-            this.BusinessGroupBox.Controls.Add(this.label11);
-            this.BusinessGroupBox.Controls.Add(this.label10);
-            this.BusinessGroupBox.Location = new System.Drawing.Point(30, 44);
-            this.BusinessGroupBox.Name = "BusinessGroupBox";
-            this.BusinessGroupBox.Size = new System.Drawing.Size(408, 312);
-            this.BusinessGroupBox.TabIndex = 0;
-            this.BusinessGroupBox.TabStop = false;
-            this.BusinessGroupBox.Text = "Business Contact";
-            // 
-            // BusinessPhoneTextBox
-            // 
-            this.BusinessPhoneTextBox.Location = new System.Drawing.Point(232, 202);
-            this.BusinessPhoneTextBox.Name = "BusinessPhoneTextBox";
-            this.BusinessPhoneTextBox.Size = new System.Drawing.Size(151, 29);
-            this.BusinessPhoneTextBox.TabIndex = 5;
-            // 
-            // FaxTextBox
-            // 
-            this.FaxTextBox.Location = new System.Drawing.Point(232, 123);
-            this.FaxTextBox.Name = "FaxTextBox";
-            this.FaxTextBox.Size = new System.Drawing.Size(151, 29);
-            this.FaxTextBox.TabIndex = 4;
-            // 
-            // CompanyNameTextBox
-            // 
-            this.CompanyNameTextBox.Location = new System.Drawing.Point(232, 46);
-            this.CompanyNameTextBox.Name = "CompanyNameTextBox";
-            this.CompanyNameTextBox.Size = new System.Drawing.Size(151, 29);
-            this.CompanyNameTextBox.TabIndex = 3;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(25, 207);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(188, 24);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Business phone no. :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 24);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Fax:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 51);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(152, 24);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Company Name:";
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.PhotoPathTextBox);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.PhoneTextBox);
             this.groupBox3.Controls.Add(this.EmailTextBox);
             this.groupBox3.Controls.Add(this.SurnameTextBox);
@@ -328,7 +269,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox3.Location = new System.Drawing.Point(49, 118);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(492, 262);
+            this.groupBox3.Size = new System.Drawing.Size(492, 276);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Basic Informations";
@@ -427,6 +368,86 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Country:";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(17, 236);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(109, 25);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Foto path:";
+            // 
+            // PhotoPathTextBox
+            // 
+            this.PhotoPathTextBox.Location = new System.Drawing.Point(210, 232);
+            this.PhotoPathTextBox.Name = "PhotoPathTextBox";
+            this.PhotoPathTextBox.Size = new System.Drawing.Size(247, 29);
+            this.PhotoPathTextBox.TabIndex = 16;
+            // 
+            // BusinessGroupBox
+            // 
+            this.BusinessGroupBox.Controls.Add(this.BusinessPhoneTextBox);
+            this.BusinessGroupBox.Controls.Add(this.FaxTextBox);
+            this.BusinessGroupBox.Controls.Add(this.CompanyNameTextBox);
+            this.BusinessGroupBox.Controls.Add(this.label12);
+            this.BusinessGroupBox.Controls.Add(this.label11);
+            this.BusinessGroupBox.Controls.Add(this.label10);
+            this.BusinessGroupBox.Location = new System.Drawing.Point(26, 35);
+            this.BusinessGroupBox.Name = "BusinessGroupBox";
+            this.BusinessGroupBox.Size = new System.Drawing.Size(408, 312);
+            this.BusinessGroupBox.TabIndex = 2;
+            this.BusinessGroupBox.TabStop = false;
+            this.BusinessGroupBox.Text = "Business Contact";
+            // 
+            // BusinessPhoneTextBox
+            // 
+            this.BusinessPhoneTextBox.Location = new System.Drawing.Point(232, 202);
+            this.BusinessPhoneTextBox.Name = "BusinessPhoneTextBox";
+            this.BusinessPhoneTextBox.Size = new System.Drawing.Size(151, 29);
+            this.BusinessPhoneTextBox.TabIndex = 5;
+            // 
+            // FaxTextBox
+            // 
+            this.FaxTextBox.Location = new System.Drawing.Point(232, 123);
+            this.FaxTextBox.Name = "FaxTextBox";
+            this.FaxTextBox.Size = new System.Drawing.Size(151, 29);
+            this.FaxTextBox.TabIndex = 4;
+            // 
+            // CompanyNameTextBox
+            // 
+            this.CompanyNameTextBox.Location = new System.Drawing.Point(232, 46);
+            this.CompanyNameTextBox.Name = "CompanyNameTextBox";
+            this.CompanyNameTextBox.Size = new System.Drawing.Size(151, 29);
+            this.CompanyNameTextBox.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 207);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(188, 24);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Business phone no. :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 24);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Fax:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(25, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(152, 24);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Company Name:";
+            // 
             // AddContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,13 +466,13 @@
             this.SocialGroupBox.ResumeLayout(false);
             this.SocialGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
-            this.BusinessGroupBox.ResumeLayout(false);
-            this.BusinessGroupBox.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.BusinessGroupBox.ResumeLayout(false);
+            this.BusinessGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,7 +493,6 @@
         private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.Button AddContactButton;
         private System.Windows.Forms.GroupBox SocialGroupBox;
-        private System.Windows.Forms.GroupBox BusinessGroupBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -484,17 +504,20 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox BusinessPhoneTextBox;
-        private System.Windows.Forms.TextBox FaxTextBox;
-        private System.Windows.Forms.TextBox CompanyNameTextBox;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.TextBox FacebookTextBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker BirthdayDatePicker;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.TextBox PhotoPathTextBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox BusinessGroupBox;
+        private System.Windows.Forms.TextBox BusinessPhoneTextBox;
+        private System.Windows.Forms.TextBox FaxTextBox;
+        private System.Windows.Forms.TextBox CompanyNameTextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }
