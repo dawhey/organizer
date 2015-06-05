@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Organizer.Classes;
 
 namespace Contact {
 	public abstract class Contact {
@@ -98,6 +99,9 @@ namespace Contact {
 
 		public Address address;
 
+
+        public abstract Memento CreateMemento();
+        public abstract void SetMemento(Memento m);
 	}
 
 }

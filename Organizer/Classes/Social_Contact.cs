@@ -43,12 +43,12 @@ namespace Contact {
 			}
 		}
 
-        public Memento CreateMemento()
+        public override Memento CreateMemento()
         {
             return new Memento(this);
         }
 
-        public void SetMemento(Memento m)
+        public override void SetMemento(Memento m)
         {
             Name = m.Scontact.Name;
             Surname = m.Scontact.Surname;
