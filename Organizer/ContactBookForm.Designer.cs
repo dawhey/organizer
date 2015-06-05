@@ -140,6 +140,8 @@
             // 
             // ContactPreviewBox
             // 
+            this.ContactPreviewBox.Controls.Add(this.DiscardButton);
+            this.ContactPreviewBox.Controls.Add(this.ApplyButton);
             this.ContactPreviewBox.Controls.Add(this.BusinessGroupBox);
             this.ContactPreviewBox.Controls.Add(this.SocialGroupBox);
             this.ContactPreviewBox.Controls.Add(this.groupBox5);
@@ -151,6 +153,7 @@
             this.ContactPreviewBox.TabIndex = 2;
             this.ContactPreviewBox.TabStop = false;
             this.ContactPreviewBox.Text = "Contact Preview";
+            this.ContactPreviewBox.Enter += new System.EventHandler(this.ContactPreviewBox_Enter);
             // 
             // BusinessGroupBox
             // 
@@ -457,7 +460,7 @@
             // ApplyButton
             // 
             this.ApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ApplyButton.Location = new System.Drawing.Point(551, 623);
+            this.ApplyButton.Location = new System.Drawing.Point(130, 518);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(136, 35);
             this.ApplyButton.TabIndex = 3;
@@ -469,22 +472,21 @@
             // DiscardButton
             // 
             this.DiscardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DiscardButton.Location = new System.Drawing.Point(768, 623);
+            this.DiscardButton.Location = new System.Drawing.Point(323, 518);
             this.DiscardButton.Name = "DiscardButton";
             this.DiscardButton.Size = new System.Drawing.Size(136, 35);
             this.DiscardButton.TabIndex = 15;
             this.DiscardButton.Text = "Discard";
             this.DiscardButton.UseVisualStyleBackColor = true;
             this.DiscardButton.Visible = false;
+            this.DiscardButton.Click += new System.EventHandler(this.DiscardButton_Click);
             // 
             // ContactBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 682);
-            this.Controls.Add(this.DiscardButton);
             this.Controls.Add(this.ContactPreviewBox);
-            this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.ContactListBox);
             this.Controls.Add(this.ButtonAddContact);
             this.Name = "ContactBookForm";

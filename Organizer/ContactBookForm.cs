@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml;
+using Organizer.Classes;
 
 namespace Organizer
 {
@@ -17,6 +18,7 @@ namespace Organizer
         ContactList.ContactList list;
         ContactList.ContactListIterator iterator = new ContactList.ContactListIterator();
         string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        Memento m;
 
         public ContactBookForm()
         {
@@ -281,6 +283,17 @@ namespace Organizer
             ContactPreviewBox.Enabled = true;
             DiscardButton.Visible = true;
             ApplyButton.Visible = true;
+
+            if (iterator.CurrentItem().Type == "business")
+            {
+                Contact.Business_Contact bc = (Contact.Business_Contact)list.Get(iterator.getCurrentIndex());
+                m = bc.CreateMemento();
+            }
+            else if (iterator.CurrentItem().Type == "social")
+            {
+                Contact.Social_Contact sc = (Contact.Social_Contact)list.Get(iterator.getCurrentIndex());
+                m = sc.CreateMemento();
+            }
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)
@@ -312,6 +325,47 @@ namespace Organizer
            }
            ContactPreviewBox.Enabled = false;
            UpdateListViewItems();
+        }
+
+        private void ContactPreviewBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DiscardButton_Click(object sender, EventArgs e)
+        {
+            if(iterator.CurrentItem().Type == "business")
+            {
+                NameTextBox.Text = m.Bcontact.Name;
+                SurnameTextBox.Text = m.Bcontact.Surname;
+                PhoneNumberTextBox.Text = m.Bcontact.Phone_number;
+                EmailTextBox.Text = m.Bcontact.Email;
+                
+                CountryTextBox.Text = m.Bcontact.address.Country;
+                CityTextBox.Text = m.Bcontact.address.City;
+                StreetTextBox.Text = m.Bcontact.address.Street;
+                ZipCodeTextBox.Text = m.Bcontact.address.Zip_code;
+
+                BusinessPhoneTextBox.Text = m.Bcontact.Business_phone;
+                FaxTextBox.Text = m.Bcontact.Fax;
+                CompanyNameTextBox.Text = m.Bcontact.Company_name;
+            }
+            else if(iterator.CurrentItem().Type == "social")
+            {
+                NameTextBox.Text = m.Scontact.Name;
+                SurnameTextBox.Text = m.Scontact.Surname;
+                PhoneNumberTextBox.Text = m.Scontact.Phone_number;
+                EmailTextBox.Text = m.Scontact.Email;
+
+                CountryTextBox.Text = m.Scontact.address.Country;
+                CityTextBox.Text = m.Scontact.address.City;
+                StreetTextBox.Text = m.Scontact.address.Street;
+                ZipCodeTextBox.Text = m.Scontact.address.Zip_code;
+
+                FacebookTextBox.Text = m.Scontact.Facebook_page;
+                BirthdayTextBox.Text = m.Scontact.Birthday_date;
+            }
+            ContactPreviewBox.Enabled = false;
         }
     }
 }

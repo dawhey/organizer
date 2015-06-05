@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Organizer.Classes;
+
 
 namespace Contact {
 
@@ -52,6 +54,24 @@ namespace Contact {
 				business_phone = value;
 			}
 		}
+
+        public Memento CreateMemento()
+        {
+            return new Memento(this);
+        }
+
+        public void SetMemento(Memento m)
+        {
+            Name = m.Bcontact.Name;
+            Surname = m.Bcontact.Surname;
+            Type = m.Bcontact.Type;
+            Email = m.Bcontact.Email;
+            Phone_number = m.Bcontact.Phone_number;
+            Photo_path = m.Bcontact.Photo_path;
+            Fax = m.Bcontact.Fax;
+            Company_name = m.Bcontact.Company_name;
+            Business_phone = m.Bcontact.Business_phone;
+        }
 
 	}
 

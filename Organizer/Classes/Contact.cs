@@ -20,7 +20,7 @@ namespace Contact {
         }
         public Contact()
         {
-
+         
         }
 
         private String photo_path;

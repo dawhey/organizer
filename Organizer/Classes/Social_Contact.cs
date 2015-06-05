@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Organizer.Classes;
+
 
 namespace Contact {
 	public class Social_Contact : Contact  {
@@ -40,6 +42,23 @@ namespace Contact {
 				birthday_date = value;
 			}
 		}
+
+        public Memento CreateMemento()
+        {
+            return new Memento(this);
+        }
+
+        public void SetMemento(Memento m)
+        {
+            Name = m.Scontact.Name;
+            Surname = m.Scontact.Surname;
+            Type = m.Scontact.Type;
+            Email = m.Scontact.Email;
+            Phone_number = m.Scontact.Phone_number;
+            Photo_path = m.Scontact.Photo_path;
+            Facebook_page = m.Scontact.Facebook_page;
+            Birthday_date = m.Scontact.Birthday_date;
+        }
 
 	}
 
