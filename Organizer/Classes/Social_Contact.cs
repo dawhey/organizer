@@ -19,18 +19,10 @@ namespace Contact {
             facebook_page = null;
             birthday_date = null;
             photo_id = null;
-           // photo_path = null;
+            Photo_path = null;
             address = new Address();
         }
-        private String photo_path;
-        public String Photo_path {
-            get {
-                return photo_path;
-            }
-            set {
-                photo_path = value;
-            }
-        }
+        
 		private String facebook_page;
 		public String Facebook_page {
 			get {

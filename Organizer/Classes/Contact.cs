@@ -15,7 +15,7 @@ namespace Contact {
             Email = email;
             Phone_number = phone;
             Type = type;
-
+            
             address = new Address();
         }
         public Contact()

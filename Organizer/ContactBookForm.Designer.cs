@@ -35,6 +35,13 @@
             this.ButtonEditContact = new System.Windows.Forms.Button();
             this.ContactListView = new System.Windows.Forms.ListView();
             this.ContactPreviewBox = new System.Windows.Forms.GroupBox();
+            this.BusinessGroupBox = new System.Windows.Forms.GroupBox();
+            this.BusinessPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.FaxTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SocialGroupBox = new System.Windows.Forms.GroupBox();
             this.BirthdayTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,30 +57,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SurnameTextBox = new System.Windows.Forms.TextBox();
+            this.label1_2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.DiscardButton = new System.Windows.Forms.Button();
-            this.label1_2 = new System.Windows.Forms.Label();
-            this.SurnameTextBox = new System.Windows.Forms.TextBox();
-            this.BusinessGroupBox = new System.Windows.Forms.GroupBox();
-            this.BusinessPhoneTextBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.FaxTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.ContactListBox.SuspendLayout();
             this.ContactPreviewBox.SuspendLayout();
+            this.BusinessGroupBox.SuspendLayout();
             this.SocialGroupBox.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.BusinessGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonAddContact
@@ -151,6 +151,77 @@
             this.ContactPreviewBox.TabIndex = 2;
             this.ContactPreviewBox.TabStop = false;
             this.ContactPreviewBox.Text = "Contact Preview";
+            // 
+            // BusinessGroupBox
+            // 
+            this.BusinessGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
+            this.BusinessGroupBox.Controls.Add(this.BusinessPhoneTextBox);
+            this.BusinessGroupBox.Controls.Add(this.label12);
+            this.BusinessGroupBox.Controls.Add(this.FaxTextBox);
+            this.BusinessGroupBox.Controls.Add(this.label10);
+            this.BusinessGroupBox.Controls.Add(this.CompanyNameTextBox);
+            this.BusinessGroupBox.Controls.Add(this.label11);
+            this.BusinessGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BusinessGroupBox.Location = new System.Drawing.Point(6, 362);
+            this.BusinessGroupBox.Name = "BusinessGroupBox";
+            this.BusinessGroupBox.Size = new System.Drawing.Size(525, 141);
+            this.BusinessGroupBox.TabIndex = 25;
+            this.BusinessGroupBox.TabStop = false;
+            this.BusinessGroupBox.Text = "Business";
+            // 
+            // BusinessPhoneTextBox
+            // 
+            this.BusinessPhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BusinessPhoneTextBox.Location = new System.Drawing.Point(161, 94);
+            this.BusinessPhoneTextBox.Name = "BusinessPhoneTextBox";
+            this.BusinessPhoneTextBox.Size = new System.Drawing.Size(358, 27);
+            this.BusinessPhoneTextBox.TabIndex = 14;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(7, 99);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(123, 20);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Business phone";
+            // 
+            // FaxTextBox
+            // 
+            this.FaxTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FaxTextBox.Location = new System.Drawing.Point(161, 60);
+            this.FaxTextBox.Name = "FaxTextBox";
+            this.FaxTextBox.Size = new System.Drawing.Size(358, 27);
+            this.FaxTextBox.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(7, 67);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Fax:";
+            // 
+            // CompanyNameTextBox
+            // 
+            this.CompanyNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompanyNameTextBox.Location = new System.Drawing.Point(161, 26);
+            this.CompanyNameTextBox.Name = "CompanyNameTextBox";
+            this.CompanyNameTextBox.Size = new System.Drawing.Size(358, 27);
+            this.CompanyNameTextBox.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(7, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(126, 20);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Company Name:";
             // 
             // SocialGroupBox
             // 
@@ -311,6 +382,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Basic informations";
             // 
+            // SurnameTextBox
+            // 
+            this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SurnameTextBox.Location = new System.Drawing.Point(167, 60);
+            this.SurnameTextBox.Name = "SurnameTextBox";
+            this.SurnameTextBox.Size = new System.Drawing.Size(358, 27);
+            this.SurnameTextBox.TabIndex = 7;
+            // 
+            // label1_2
+            // 
+            this.label1_2.AutoSize = true;
+            this.label1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1_2.Location = new System.Drawing.Point(7, 67);
+            this.label1_2.Name = "label1_2";
+            this.label1_2.Size = new System.Drawing.Size(78, 20);
+            this.label1_2.TabIndex = 6;
+            this.label1_2.Text = "Surname:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -337,16 +426,6 @@
             this.NameTextBox.Size = new System.Drawing.Size(358, 27);
             this.NameTextBox.TabIndex = 1;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(7, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Email:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -364,6 +443,16 @@
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(358, 27);
             this.PhoneNumberTextBox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(7, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Email:";
             // 
             // ApplyButton
             // 
@@ -388,95 +477,6 @@
             this.DiscardButton.UseVisualStyleBackColor = true;
             this.DiscardButton.Visible = false;
             // 
-            // label1_2
-            // 
-            this.label1_2.AutoSize = true;
-            this.label1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1_2.Location = new System.Drawing.Point(7, 67);
-            this.label1_2.Name = "label1_2";
-            this.label1_2.Size = new System.Drawing.Size(78, 20);
-            this.label1_2.TabIndex = 6;
-            this.label1_2.Text = "Surname:";
-            // 
-            // SurnameTextBox
-            // 
-            this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SurnameTextBox.Location = new System.Drawing.Point(167, 60);
-            this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(358, 27);
-            this.SurnameTextBox.TabIndex = 7;
-            // 
-            // BusinessGroupBox
-            // 
-            this.BusinessGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.List;
-            this.BusinessGroupBox.Controls.Add(this.BusinessPhoneTextBox);
-            this.BusinessGroupBox.Controls.Add(this.label12);
-            this.BusinessGroupBox.Controls.Add(this.FaxTextBox);
-            this.BusinessGroupBox.Controls.Add(this.label10);
-            this.BusinessGroupBox.Controls.Add(this.CompanyNameTextBox);
-            this.BusinessGroupBox.Controls.Add(this.label11);
-            this.BusinessGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BusinessGroupBox.Location = new System.Drawing.Point(6, 362);
-            this.BusinessGroupBox.Name = "BusinessGroupBox";
-            this.BusinessGroupBox.Size = new System.Drawing.Size(525, 141);
-            this.BusinessGroupBox.TabIndex = 25;
-            this.BusinessGroupBox.TabStop = false;
-            this.BusinessGroupBox.Text = "Business";
-            // 
-            // BusinessPhoneTextBox
-            // 
-            this.BusinessPhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BusinessPhoneTextBox.Location = new System.Drawing.Point(161, 94);
-            this.BusinessPhoneTextBox.Name = "BusinessPhoneTextBox";
-            this.BusinessPhoneTextBox.Size = new System.Drawing.Size(358, 27);
-            this.BusinessPhoneTextBox.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(7, 99);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(123, 20);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Business phone";
-            // 
-            // FaxTextBox
-            // 
-            this.FaxTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FaxTextBox.Location = new System.Drawing.Point(161, 60);
-            this.FaxTextBox.Name = "FaxTextBox";
-            this.FaxTextBox.Size = new System.Drawing.Size(358, 27);
-            this.FaxTextBox.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(7, 67);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Fax:";
-            // 
-            // CompanyNameTextBox
-            // 
-            this.CompanyNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompanyNameTextBox.Location = new System.Drawing.Point(161, 26);
-            this.CompanyNameTextBox.Name = "CompanyNameTextBox";
-            this.CompanyNameTextBox.Size = new System.Drawing.Size(358, 27);
-            this.CompanyNameTextBox.TabIndex = 10;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(7, 33);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(126, 20);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Company Name:";
-            // 
             // ContactBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,14 +494,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ContactListBox.ResumeLayout(false);
             this.ContactPreviewBox.ResumeLayout(false);
+            this.BusinessGroupBox.ResumeLayout(false);
+            this.BusinessGroupBox.PerformLayout();
             this.SocialGroupBox.ResumeLayout(false);
             this.SocialGroupBox.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.BusinessGroupBox.ResumeLayout(false);
-            this.BusinessGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
