@@ -18,7 +18,6 @@ namespace Contact {
             Phone_number = null;
             facebook_page = null;
             birthday_date = null;
-            photo_id = null;
             Photo_path = null;
             address = new Address();
         }
@@ -39,15 +38,6 @@ namespace Contact {
 			}
 			set {
 				birthday_date = value;
-			}
-		}
-		private String photo_id;
-		public String Photo_id {
-			get {
-				return photo_id;
-			}
-			set {
-				photo_id = value;
 			}
 		}
 

@@ -63,7 +63,6 @@ namespace Organizer
                  newContact.Photo_path = PhotoPathTextBox.Text;
                  newContact.Birthday_date = Convert.ToString(BirthdayDatePicker.Text);
                  newContact.Facebook_page = FacebookTextBox.Text;
-                 newContact.Photo_id = PictureBox.ImageLocation;
 
                  newContact.address.City = CityTextBox.Text;
                  newContact.address.Country = CountryTextBox.Text;

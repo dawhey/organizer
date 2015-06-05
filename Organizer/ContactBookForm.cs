@@ -51,7 +51,6 @@ namespace Organizer
 
                     sc.Birthday_date = xNode.SelectSingleNode("Birthday_date").InnerText;
                     sc.Facebook_page = xNode.SelectSingleNode("Facebook_page").InnerText;
-                    sc.Photo_id = xNode.SelectSingleNode("Photo_id").InnerText;
 
                     list.Add(sc);
                     ContactListView.Items.Add(sc.Name + " " + sc.Surname);
@@ -164,7 +163,6 @@ namespace Organizer
 
                     Contact.Social_Contact scontact = (Contact.Social_Contact)list.Get(iterator.getCurrentIndex());
                     xFacebook_page.InnerText = scontact.Facebook_page;
-                    xPhoto_id.InnerText = scontact.Photo_id;
                     xBirthday_date.InnerText = scontact.Birthday_date;
 
                     xTop.AppendChild(xFacebook_page);
