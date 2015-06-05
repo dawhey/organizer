@@ -40,13 +40,9 @@
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.AddContactButton = new System.Windows.Forms.Button();
-            this.SocialGroupBox = new System.Windows.Forms.GroupBox();
-            this.BirthdayDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.PictureBox = new System.Windows.Forms.PictureBox();
-            this.FacebookTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.PhotoPathTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.ZipCodeTextBox = new System.Windows.Forms.TextBox();
@@ -58,21 +54,28 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.label15 = new System.Windows.Forms.Label();
-            this.PhotoPathTextBox = new System.Windows.Forms.TextBox();
+            this.SocialGroupBox = new System.Windows.Forms.GroupBox();
+            this.BirthdayDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.FacebookTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.BusinessGroupBox = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.BusinessPhoneTextBox = new System.Windows.Forms.TextBox();
             this.FaxTextBox = new System.Windows.Forms.TextBox();
             this.CompanyNameTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.SocialGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            this.AddPhotoBox = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.FilePathTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.SocialGroupBox.SuspendLayout();
             this.BusinessGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddPhotoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -194,66 +197,6 @@
             this.AddContactButton.UseVisualStyleBackColor = true;
             this.AddContactButton.Click += new System.EventHandler(this.AddContactButton_Click);
             // 
-            // SocialGroupBox
-            // 
-            this.SocialGroupBox.Controls.Add(this.BirthdayDatePicker);
-            this.SocialGroupBox.Controls.Add(this.PictureBox);
-            this.SocialGroupBox.Controls.Add(this.FacebookTextBox);
-            this.SocialGroupBox.Controls.Add(this.label14);
-            this.SocialGroupBox.Controls.Add(this.label13);
-            this.SocialGroupBox.Location = new System.Drawing.Point(30, 44);
-            this.SocialGroupBox.Name = "SocialGroupBox";
-            this.SocialGroupBox.Size = new System.Drawing.Size(408, 312);
-            this.SocialGroupBox.TabIndex = 0;
-            this.SocialGroupBox.TabStop = false;
-            this.SocialGroupBox.Text = "Social Contact";
-            // 
-            // BirthdayDatePicker
-            // 
-            this.BirthdayDatePicker.Location = new System.Drawing.Point(196, 171);
-            this.BirthdayDatePicker.Name = "BirthdayDatePicker";
-            this.BirthdayDatePicker.Size = new System.Drawing.Size(200, 29);
-            this.BirthdayDatePicker.TabIndex = 5;
-            // 
-            // PictureBox
-            // 
-            this.PictureBox.ErrorImage = null;
-            this.PictureBox.Image = global::Organizer.Properties.Resources._default;
-            this.PictureBox.InitialImage = null;
-            this.PictureBox.Location = new System.Drawing.Point(155, 33);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(116, 125);
-            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBox.TabIndex = 4;
-            this.PictureBox.TabStop = false;
-            // 
-            // FacebookTextBox
-            // 
-            this.FacebookTextBox.Location = new System.Drawing.Point(196, 220);
-            this.FacebookTextBox.Name = "FacebookTextBox";
-            this.FacebookTextBox.Size = new System.Drawing.Size(200, 29);
-            this.FacebookTextBox.TabIndex = 3;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(32, 225);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(148, 24);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Facebook page:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(32, 176);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 24);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Birthday date:";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.PhotoPathTextBox);
@@ -274,14 +217,34 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Basic Informations";
             // 
+            // PhotoPathTextBox
+            // 
+            this.PhotoPathTextBox.Location = new System.Drawing.Point(210, 232);
+            this.PhotoPathTextBox.Name = "PhotoPathTextBox";
+            this.PhotoPathTextBox.Size = new System.Drawing.Size(247, 29);
+            this.PhotoPathTextBox.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(17, 236);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(109, 25);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Foto path:";
+            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.FilePathTextBox);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.AddPhotoBox);
             this.groupBox4.Controls.Add(this.BusinessGroupBox);
             this.groupBox4.Controls.Add(this.SocialGroupBox);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox4.Location = new System.Drawing.Point(568, 118);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(460, 382);
+            this.groupBox4.Size = new System.Drawing.Size(460, 449);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Additional Informations";
@@ -368,55 +331,95 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Country:";
             // 
-            // label15
+            // SocialGroupBox
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(17, 236);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 25);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Foto path:";
+            this.SocialGroupBox.Controls.Add(this.BirthdayDatePicker);
+            this.SocialGroupBox.Controls.Add(this.FacebookTextBox);
+            this.SocialGroupBox.Controls.Add(this.label14);
+            this.SocialGroupBox.Controls.Add(this.label13);
+            this.SocialGroupBox.Location = new System.Drawing.Point(28, 44);
+            this.SocialGroupBox.Name = "SocialGroupBox";
+            this.SocialGroupBox.Size = new System.Drawing.Size(408, 176);
+            this.SocialGroupBox.TabIndex = 13;
+            this.SocialGroupBox.TabStop = false;
+            this.SocialGroupBox.Text = "Social Contact";
             // 
-            // PhotoPathTextBox
+            // BirthdayDatePicker
             // 
-            this.PhotoPathTextBox.Location = new System.Drawing.Point(210, 232);
-            this.PhotoPathTextBox.Name = "PhotoPathTextBox";
-            this.PhotoPathTextBox.Size = new System.Drawing.Size(247, 29);
-            this.PhotoPathTextBox.TabIndex = 16;
+            this.BirthdayDatePicker.Location = new System.Drawing.Point(193, 28);
+            this.BirthdayDatePicker.Name = "BirthdayDatePicker";
+            this.BirthdayDatePicker.Size = new System.Drawing.Size(200, 29);
+            this.BirthdayDatePicker.TabIndex = 5;
+            // 
+            // FacebookTextBox
+            // 
+            this.FacebookTextBox.Location = new System.Drawing.Point(193, 77);
+            this.FacebookTextBox.Name = "FacebookTextBox";
+            this.FacebookTextBox.Size = new System.Drawing.Size(200, 29);
+            this.FacebookTextBox.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(29, 82);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(148, 24);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Facebook page:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(29, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(123, 24);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Birthday date:";
             // 
             // BusinessGroupBox
             // 
+            this.BusinessGroupBox.Controls.Add(this.label16);
             this.BusinessGroupBox.Controls.Add(this.BusinessPhoneTextBox);
             this.BusinessGroupBox.Controls.Add(this.FaxTextBox);
             this.BusinessGroupBox.Controls.Add(this.CompanyNameTextBox);
             this.BusinessGroupBox.Controls.Add(this.label12);
             this.BusinessGroupBox.Controls.Add(this.label11);
             this.BusinessGroupBox.Controls.Add(this.label10);
-            this.BusinessGroupBox.Location = new System.Drawing.Point(26, 35);
+            this.BusinessGroupBox.Location = new System.Drawing.Point(26, 53);
             this.BusinessGroupBox.Name = "BusinessGroupBox";
-            this.BusinessGroupBox.Size = new System.Drawing.Size(408, 312);
-            this.BusinessGroupBox.TabIndex = 2;
+            this.BusinessGroupBox.Size = new System.Drawing.Size(408, 176);
+            this.BusinessGroupBox.TabIndex = 14;
             this.BusinessGroupBox.TabStop = false;
             this.BusinessGroupBox.Text = "Business Contact";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(25, 176);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 24);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Add photo";
+            // 
             // BusinessPhoneTextBox
             // 
-            this.BusinessPhoneTextBox.Location = new System.Drawing.Point(232, 202);
+            this.BusinessPhoneTextBox.Location = new System.Drawing.Point(232, 120);
             this.BusinessPhoneTextBox.Name = "BusinessPhoneTextBox";
             this.BusinessPhoneTextBox.Size = new System.Drawing.Size(151, 29);
             this.BusinessPhoneTextBox.TabIndex = 5;
             // 
             // FaxTextBox
             // 
-            this.FaxTextBox.Location = new System.Drawing.Point(232, 123);
+            this.FaxTextBox.Location = new System.Drawing.Point(232, 74);
             this.FaxTextBox.Name = "FaxTextBox";
             this.FaxTextBox.Size = new System.Drawing.Size(151, 29);
             this.FaxTextBox.TabIndex = 4;
             // 
             // CompanyNameTextBox
             // 
-            this.CompanyNameTextBox.Location = new System.Drawing.Point(232, 46);
+            this.CompanyNameTextBox.Location = new System.Drawing.Point(232, 29);
             this.CompanyNameTextBox.Name = "CompanyNameTextBox";
             this.CompanyNameTextBox.Size = new System.Drawing.Size(151, 29);
             this.CompanyNameTextBox.TabIndex = 3;
@@ -424,7 +427,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(25, 207);
+            this.label12.Location = new System.Drawing.Point(25, 125);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(188, 24);
             this.label12.TabIndex = 2;
@@ -433,7 +436,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 128);
+            this.label11.Location = new System.Drawing.Point(25, 79);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 24);
             this.label11.TabIndex = 1;
@@ -442,11 +445,40 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 51);
+            this.label10.Location = new System.Drawing.Point(25, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(152, 24);
             this.label10.TabIndex = 0;
             this.label10.Text = "Company Name:";
+            // 
+            // AddPhotoBox
+            // 
+            this.AddPhotoBox.ErrorImage = null;
+            this.AddPhotoBox.Image = global::Organizer.Properties.Resources._default;
+            this.AddPhotoBox.InitialImage = null;
+            this.AddPhotoBox.Location = new System.Drawing.Point(259, 236);
+            this.AddPhotoBox.Name = "AddPhotoBox";
+            this.AddPhotoBox.Size = new System.Drawing.Size(150, 150);
+            this.AddPhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AddPhotoBox.TabIndex = 15;
+            this.AddPhotoBox.TabStop = false;
+            this.AddPhotoBox.Click += new System.EventHandler(this.AddPhotoBox_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(24, 413);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(87, 24);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "File path:";
+            // 
+            // FilePathTextBox
+            // 
+            this.FilePathTextBox.Location = new System.Drawing.Point(120, 410);
+            this.FilePathTextBox.Name = "FilePathTextBox";
+            this.FilePathTextBox.Size = new System.Drawing.Size(334, 29);
+            this.FilePathTextBox.TabIndex = 17;
             // 
             // AddContactForm
             // 
@@ -463,16 +495,17 @@
             this.Name = "AddContactForm";
             this.Text = "Add Contact";
             this.Load += new System.EventHandler(this.AddContactForm_Load);
-            this.SocialGroupBox.ResumeLayout(false);
-            this.SocialGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.SocialGroupBox.ResumeLayout(false);
+            this.SocialGroupBox.PerformLayout();
             this.BusinessGroupBox.ResumeLayout(false);
             this.BusinessGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddPhotoBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,7 +525,6 @@
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.TextBox PhoneTextBox;
         private System.Windows.Forms.Button AddContactButton;
-        private System.Windows.Forms.GroupBox SocialGroupBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -504,20 +536,24 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.TextBox FacebookTextBox;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker BirthdayDatePicker;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.TextBox PhotoPathTextBox;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox FilePathTextBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.PictureBox AddPhotoBox;
         private System.Windows.Forms.GroupBox BusinessGroupBox;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox BusinessPhoneTextBox;
         private System.Windows.Forms.TextBox FaxTextBox;
         private System.Windows.Forms.TextBox CompanyNameTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox SocialGroupBox;
+        private System.Windows.Forms.DateTimePicker BirthdayDatePicker;
+        private System.Windows.Forms.TextBox FacebookTextBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
     }
 }

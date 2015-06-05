@@ -45,6 +45,7 @@ namespace Organizer
                     sc.Surname = xNode.SelectSingleNode("Surname").InnerText;
                     sc.Email = xNode.SelectSingleNode("Email").InnerText;
                     sc.Phone_number = xNode.SelectSingleNode("Phone_number").InnerText;
+                    sc.Photo_path = xNode.SelectSingleNode("Photo_path").InnerText;
 
                     sc.address.Country = xNode.SelectSingleNode("Country").InnerText;
                     sc.address.City = xNode.SelectSingleNode("City").InnerText;
@@ -65,6 +66,7 @@ namespace Organizer
                     bc.Surname = xNode.SelectSingleNode("Surname").InnerText;
                     bc.Email = xNode.SelectSingleNode("Email").InnerText;
                     bc.Phone_number = xNode.SelectSingleNode("Phone_number").InnerText;
+                    bc.Photo_path = xNode.SelectSingleNode("Photo_path").InnerText;
 
                     bc.address.Country = xNode.SelectSingleNode("Country").InnerText;
                     bc.address.City = xNode.SelectSingleNode("City").InnerText;
@@ -132,7 +134,8 @@ namespace Organizer
                 XmlNode xCity = xDoc.CreateElement("City");
                 XmlNode xStreet = xDoc.CreateElement("Street");
                 XmlNode xZip_code = xDoc.CreateElement("Zip_code");
-               
+                XmlNode xPhoto_path = xDoc.CreateElement("Photo_path");
+
                 xId.InnerText = iterator.CurrentItem().Id.ToString();
                 xName.InnerText = iterator.CurrentItem().Name;
                 xSurname.InnerText = iterator.CurrentItem().Surname;
@@ -142,6 +145,7 @@ namespace Organizer
                 xCountry.InnerText = iterator.CurrentItem().address.Country;
                 xCity.InnerText = iterator.CurrentItem().address.City;
                 xStreet.InnerText = iterator.CurrentItem().address.Street;
+                xPhoto_path.InnerText = iterator.CurrentItem().Photo_path;
 
                 xType.InnerText = iterator.CurrentItem().Type;
                 xTop.AppendChild(xId);
@@ -154,6 +158,7 @@ namespace Organizer
                 xTop.AppendChild(xCity);
                 xTop.AppendChild(xStreet);
                 xTop.AppendChild(xZip_code);
+                xTop.AppendChild(xPhoto_path);
                 xDoc.DocumentElement.AppendChild(xTop);
 
                 //zapisywanie socjala
@@ -198,6 +203,20 @@ namespace Organizer
             AddContactForm ac = new AddContactForm(this);
             ac.Show();
         }
+
+        private void UpdatePhotoBox(String file_path)
+        {
+            try
+            {
+                ContactPreviewPhotoBox.Image = Image.FromFile(file_path);
+            }
+            catch
+            {
+                ContactPreviewPhotoBox.Image = Organizer.Properties.Resources._default;
+                //ExceptionForm ep = new ExceptionForm();
+                //ep.Show();
+            }
+        }
         
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -223,7 +242,9 @@ namespace Organizer
                 if (iterator.IsDone())
                     iterator.First();
             }
-            
+
+            UpdatePhotoBox(iterator.CurrentItem().Photo_path);
+
             if(iterator.CurrentItem().Type == "social")
             {
                 SocialGroupBox.Visible = true;
@@ -308,6 +329,7 @@ namespace Organizer
                bc.address.Zip_code = ZipCodeTextBox.Text;  
                bc.Business_phone = BusinessPhoneTextBox.Text;
                bc.Company_name = CompanyNameTextBox.Text;
+               bc.Photo_path = PhotoTextBox.Text;
                bc.Fax = FaxTextBox.Text;
                list.EditContact(bc, iterator.CurrentItem());
            }
@@ -321,15 +343,22 @@ namespace Organizer
                sc.address.Zip_code = ZipCodeTextBox.Text;
                sc.Facebook_page = FacebookTextBox.Text;
                sc.Birthday_date = BirthdayTextBox.Text;
+               sc.Photo_path = PhotoTextBox.Text;
                list.EditContact(sc, iterator.CurrentItem());
            }
            ContactPreviewBox.Enabled = false;
            UpdateListViewItems();
         }
 
-        private void ContactPreviewBox_Enter(object sender, EventArgs e)
+        private void ContactPreviewPhotoBox_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                ofd.ShowDialog();
+                PhotoTextBox.Text = ofd.FileName;
+                UpdatePhotoBox(ofd.FileName);
+            }  
         }
 
         private void DiscardButton_Click(object sender, EventArgs e)

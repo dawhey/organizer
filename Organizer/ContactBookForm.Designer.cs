@@ -35,6 +35,8 @@
             this.ButtonEditContact = new System.Windows.Forms.Button();
             this.ContactListView = new System.Windows.Forms.ListView();
             this.ContactPreviewBox = new System.Windows.Forms.GroupBox();
+            this.DiscardButton = new System.Windows.Forms.Button();
+            this.ApplyButton = new System.Windows.Forms.Button();
             this.BusinessGroupBox = new System.Windows.Forms.GroupBox();
             this.BusinessPhoneTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,6 +59,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.PhotoTextBox = new System.Windows.Forms.TextBox();
+            this.ContactPreviewPhotoBox = new System.Windows.Forms.PictureBox();
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.label1_2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,8 +69,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ApplyButton = new System.Windows.Forms.Button();
-            this.DiscardButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.ContactListBox.SuspendLayout();
             this.ContactPreviewBox.SuspendLayout();
@@ -74,6 +76,7 @@
             this.SocialGroupBox.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactPreviewPhotoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonAddContact
@@ -153,7 +156,30 @@
             this.ContactPreviewBox.TabIndex = 2;
             this.ContactPreviewBox.TabStop = false;
             this.ContactPreviewBox.Text = "Contact Preview";
-            this.ContactPreviewBox.Enter += new System.EventHandler(this.ContactPreviewBox_Enter);
+            // 
+            // DiscardButton
+            // 
+            this.DiscardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DiscardButton.Location = new System.Drawing.Point(323, 518);
+            this.DiscardButton.Name = "DiscardButton";
+            this.DiscardButton.Size = new System.Drawing.Size(136, 35);
+            this.DiscardButton.TabIndex = 15;
+            this.DiscardButton.Text = "Discard";
+            this.DiscardButton.UseVisualStyleBackColor = true;
+            this.DiscardButton.Visible = false;
+            this.DiscardButton.Click += new System.EventHandler(this.DiscardButton_Click);
+            // 
+            // ApplyButton
+            // 
+            this.ApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ApplyButton.Location = new System.Drawing.Point(130, 518);
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Size = new System.Drawing.Size(136, 35);
+            this.ApplyButton.TabIndex = 3;
+            this.ApplyButton.Text = "Apply";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Visible = false;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // BusinessGroupBox
             // 
@@ -368,6 +394,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.PhotoTextBox);
+            this.groupBox2.Controls.Add(this.ContactPreviewPhotoBox);
             this.groupBox2.Controls.Add(this.SurnameTextBox);
             this.groupBox2.Controls.Add(this.label1_2);
             this.groupBox2.Controls.Add(this.label1);
@@ -385,12 +413,33 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Basic informations";
             // 
+            // PhotoTextBox
+            // 
+            this.PhotoTextBox.Location = new System.Drawing.Point(410, 125);
+            this.PhotoTextBox.Name = "PhotoTextBox";
+            this.PhotoTextBox.Size = new System.Drawing.Size(100, 27);
+            this.PhotoTextBox.TabIndex = 10;
+            this.PhotoTextBox.Visible = false;
+            // 
+            // ContactPreviewPhotoBox
+            // 
+            this.ContactPreviewPhotoBox.ErrorImage = null;
+            this.ContactPreviewPhotoBox.Image = global::Organizer.Properties.Resources._default;
+            this.ContactPreviewPhotoBox.InitialImage = null;
+            this.ContactPreviewPhotoBox.Location = new System.Drawing.Point(399, 26);
+            this.ContactPreviewPhotoBox.Name = "ContactPreviewPhotoBox";
+            this.ContactPreviewPhotoBox.Size = new System.Drawing.Size(120, 126);
+            this.ContactPreviewPhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ContactPreviewPhotoBox.TabIndex = 9;
+            this.ContactPreviewPhotoBox.TabStop = false;
+            this.ContactPreviewPhotoBox.Click += new System.EventHandler(this.ContactPreviewPhotoBox_Click);
+            // 
             // SurnameTextBox
             // 
             this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SurnameTextBox.Location = new System.Drawing.Point(167, 60);
             this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(358, 27);
+            this.SurnameTextBox.Size = new System.Drawing.Size(226, 27);
             this.SurnameTextBox.TabIndex = 7;
             // 
             // label1_2
@@ -418,7 +467,7 @@
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailTextBox.Location = new System.Drawing.Point(167, 126);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(358, 27);
+            this.EmailTextBox.Size = new System.Drawing.Size(226, 27);
             this.EmailTextBox.TabIndex = 5;
             // 
             // NameTextBox
@@ -426,7 +475,7 @@
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(167, 27);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(358, 27);
+            this.NameTextBox.Size = new System.Drawing.Size(226, 27);
             this.NameTextBox.TabIndex = 1;
             // 
             // label2
@@ -444,7 +493,7 @@
             this.PhoneNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(167, 93);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(358, 27);
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(226, 27);
             this.PhoneNumberTextBox.TabIndex = 3;
             // 
             // label3
@@ -456,30 +505,6 @@
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email:";
-            // 
-            // ApplyButton
-            // 
-            this.ApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ApplyButton.Location = new System.Drawing.Point(130, 518);
-            this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(136, 35);
-            this.ApplyButton.TabIndex = 3;
-            this.ApplyButton.Text = "Apply";
-            this.ApplyButton.UseVisualStyleBackColor = true;
-            this.ApplyButton.Visible = false;
-            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
-            // 
-            // DiscardButton
-            // 
-            this.DiscardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DiscardButton.Location = new System.Drawing.Point(323, 518);
-            this.DiscardButton.Name = "DiscardButton";
-            this.DiscardButton.Size = new System.Drawing.Size(136, 35);
-            this.DiscardButton.TabIndex = 15;
-            this.DiscardButton.Text = "Discard";
-            this.DiscardButton.UseVisualStyleBackColor = true;
-            this.DiscardButton.Visible = false;
-            this.DiscardButton.Click += new System.EventHandler(this.DiscardButton_Click);
             // 
             // ContactBookForm
             // 
@@ -504,6 +529,7 @@
             this.groupBox5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactPreviewPhotoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,5 +575,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox CompanyNameTextBox;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox PhotoTextBox;
+        private System.Windows.Forms.PictureBox ContactPreviewPhotoBox;
     }
 }
