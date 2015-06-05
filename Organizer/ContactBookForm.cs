@@ -24,8 +24,14 @@ namespace Organizer
         {
             InitializeComponent();
             list = ContactList.ContactList.GetInstance();
+            ContactPreviewBox.Enabled = false; 
             ButtonEditContact.Enabled = false;
             ButtonRemoveContact.Enabled = false;
+            BasicInformationsGoupBox.Visible = false;
+            AddressGroupBox.Visible = false;
+            SocialGroupBox.Visible = false;
+            BusinessGroupBox.Visible = false;
+            SelectInfoTextBox.Visible = true; 
         }
 
         private void AddItemsToListViewFromXml()
@@ -224,18 +230,25 @@ namespace Organizer
             // Podczas przełączania się zaznaczenia SelectedItems.Count wynosiło 
             // prez pewien okres czasu "0" i następowało odniesienie się do elementu
             // z zaznaczonej listy, który nie istniał
-            // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            // kurwa ile siedziałem nad tym gównem
             if (ContactListView.SelectedItems.Count == 0)
             {
                 ButtonEditContact.Enabled = false;
                 ButtonRemoveContact.Enabled = false;
+                BasicInformationsGoupBox.Visible = false;
+                AddressGroupBox.Visible = false;
+                SocialGroupBox.Visible = false;
+                BusinessGroupBox.Visible = false;
+                SelectInfoTextBox.Visible = true;
                 return;
             }
+
+            BasicInformationsGoupBox.Visible = true;
+            AddressGroupBox.Visible = true;           
             ButtonEditContact.Enabled = true;
-            ButtonRemoveContact.Enabled = true;  
-            int selected_contact_index = ContactListView.SelectedItems[0].Index;
-            
+            ButtonRemoveContact.Enabled = true;
+            SelectInfoTextBox.Visible = false; 
+
+            int selected_contact_index = ContactListView.SelectedItems[0].Index;            
             while (selected_contact_index != iterator.getCurrentIndex())
             {
                 iterator.Next();

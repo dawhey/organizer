@@ -49,7 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.FacebookTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.AddressGroupBox = new System.Windows.Forms.GroupBox();
             this.ZipCodeTextBox = new System.Windows.Forms.TextBox();
             this.StreetTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.CityTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BasicInformationsGoupBox = new System.Windows.Forms.GroupBox();
             this.PhotoTextBox = new System.Windows.Forms.TextBox();
             this.ContactPreviewPhotoBox = new System.Windows.Forms.PictureBox();
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
@@ -69,13 +69,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.SelectInfoTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.ContactListBox.SuspendLayout();
             this.ContactPreviewBox.SuspendLayout();
             this.BusinessGroupBox.SuspendLayout();
             this.SocialGroupBox.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.AddressGroupBox.SuspendLayout();
+            this.BasicInformationsGoupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactPreviewPhotoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,12 +144,13 @@
             // 
             // ContactPreviewBox
             // 
+            this.ContactPreviewBox.Controls.Add(this.SelectInfoTextBox);
             this.ContactPreviewBox.Controls.Add(this.DiscardButton);
             this.ContactPreviewBox.Controls.Add(this.ApplyButton);
             this.ContactPreviewBox.Controls.Add(this.BusinessGroupBox);
             this.ContactPreviewBox.Controls.Add(this.SocialGroupBox);
-            this.ContactPreviewBox.Controls.Add(this.groupBox5);
-            this.ContactPreviewBox.Controls.Add(this.groupBox2);
+            this.ContactPreviewBox.Controls.Add(this.AddressGroupBox);
+            this.ContactPreviewBox.Controls.Add(this.BasicInformationsGoupBox);
             this.ContactPreviewBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ContactPreviewBox.Location = new System.Drawing.Point(446, 12);
             this.ContactPreviewBox.Name = "ContactPreviewBox";
@@ -302,23 +304,23 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Facebook:";
             // 
-            // groupBox5
+            // AddressGroupBox
             // 
-            this.groupBox5.Controls.Add(this.ZipCodeTextBox);
-            this.groupBox5.Controls.Add(this.StreetTextBox);
-            this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.CountryTextBox);
-            this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.CityTextBox);
-            this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox5.Location = new System.Drawing.Point(6, 192);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(525, 163);
-            this.groupBox5.TabIndex = 20;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Address";
+            this.AddressGroupBox.Controls.Add(this.ZipCodeTextBox);
+            this.AddressGroupBox.Controls.Add(this.StreetTextBox);
+            this.AddressGroupBox.Controls.Add(this.label9);
+            this.AddressGroupBox.Controls.Add(this.CountryTextBox);
+            this.AddressGroupBox.Controls.Add(this.label8);
+            this.AddressGroupBox.Controls.Add(this.CityTextBox);
+            this.AddressGroupBox.Controls.Add(this.label7);
+            this.AddressGroupBox.Controls.Add(this.label4);
+            this.AddressGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddressGroupBox.Location = new System.Drawing.Point(6, 192);
+            this.AddressGroupBox.Name = "AddressGroupBox";
+            this.AddressGroupBox.Size = new System.Drawing.Size(525, 163);
+            this.AddressGroupBox.TabIndex = 20;
+            this.AddressGroupBox.TabStop = false;
+            this.AddressGroupBox.Text = "Address";
             // 
             // ZipCodeTextBox
             // 
@@ -392,26 +394,26 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Country:";
             // 
-            // groupBox2
+            // BasicInformationsGoupBox
             // 
-            this.groupBox2.Controls.Add(this.PhotoTextBox);
-            this.groupBox2.Controls.Add(this.ContactPreviewPhotoBox);
-            this.groupBox2.Controls.Add(this.SurnameTextBox);
-            this.groupBox2.Controls.Add(this.label1_2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.EmailTextBox);
-            this.groupBox2.Controls.Add(this.NameTextBox);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.PhoneNumberTextBox);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox2.Location = new System.Drawing.Point(6, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(525, 161);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Basic informations";
+            this.BasicInformationsGoupBox.Controls.Add(this.PhotoTextBox);
+            this.BasicInformationsGoupBox.Controls.Add(this.ContactPreviewPhotoBox);
+            this.BasicInformationsGoupBox.Controls.Add(this.SurnameTextBox);
+            this.BasicInformationsGoupBox.Controls.Add(this.label1_2);
+            this.BasicInformationsGoupBox.Controls.Add(this.label1);
+            this.BasicInformationsGoupBox.Controls.Add(this.EmailTextBox);
+            this.BasicInformationsGoupBox.Controls.Add(this.NameTextBox);
+            this.BasicInformationsGoupBox.Controls.Add(this.label2);
+            this.BasicInformationsGoupBox.Controls.Add(this.PhoneNumberTextBox);
+            this.BasicInformationsGoupBox.Controls.Add(this.label3);
+            this.BasicInformationsGoupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BasicInformationsGoupBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BasicInformationsGoupBox.Location = new System.Drawing.Point(6, 25);
+            this.BasicInformationsGoupBox.Name = "BasicInformationsGoupBox";
+            this.BasicInformationsGoupBox.Size = new System.Drawing.Size(525, 161);
+            this.BasicInformationsGoupBox.TabIndex = 3;
+            this.BasicInformationsGoupBox.TabStop = false;
+            this.BasicInformationsGoupBox.Text = "Basic informations";
             // 
             // PhotoTextBox
             // 
@@ -506,6 +508,16 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Email:";
             // 
+            // SelectInfoTextBox
+            // 
+            this.SelectInfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SelectInfoTextBox.Location = new System.Drawing.Point(141, 277);
+            this.SelectInfoTextBox.Name = "SelectInfoTextBox";
+            this.SelectInfoTextBox.Size = new System.Drawing.Size(254, 25);
+            this.SelectInfoTextBox.TabIndex = 28;
+            this.SelectInfoTextBox.Text = "<No contact selected>";
+            this.SelectInfoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // ContactBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,14 +533,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ContactListBox.ResumeLayout(false);
             this.ContactPreviewBox.ResumeLayout(false);
+            this.ContactPreviewBox.PerformLayout();
             this.BusinessGroupBox.ResumeLayout(false);
             this.BusinessGroupBox.PerformLayout();
             this.SocialGroupBox.ResumeLayout(false);
             this.SocialGroupBox.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.AddressGroupBox.ResumeLayout(false);
+            this.AddressGroupBox.PerformLayout();
+            this.BasicInformationsGoupBox.ResumeLayout(false);
+            this.BasicInformationsGoupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactPreviewPhotoBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -547,10 +560,10 @@
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox PhoneNumberTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox BasicInformationsGoupBox;
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox AddressGroupBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -577,5 +590,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox PhotoTextBox;
         private System.Windows.Forms.PictureBox ContactPreviewPhotoBox;
+        private System.Windows.Forms.TextBox SelectInfoTextBox;
     }
 }

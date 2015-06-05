@@ -70,9 +70,5 @@ namespace ContactList {
             }
                 return listInstance;
         }
-
-		private ContactListIterator contactListIterator;
-
-	}
-
+ 	}
 }
