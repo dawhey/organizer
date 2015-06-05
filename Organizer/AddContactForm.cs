@@ -32,6 +32,19 @@ namespace Organizer
 
         }
 
+        private void UpdatePhotoBox(String file_path)
+        {
+            try
+            {
+                AddPhotoBox.Image = Image.FromFile(file_path);
+            }
+            catch
+            {
+                //ExceptionForm ep = new ExceptionForm();
+               // ep.Show();
+            }
+        }
+
         private void SocialButtonChanged(object sender, EventArgs e)
         {
             //zeby tylko typ mogl byc jednoczesnie dodany (Social albo Business)
@@ -55,12 +68,16 @@ namespace Organizer
 
         private void AddContactButton_Click(object sender, EventArgs e)
         {
+            //Aby zapobiec dodawaniu pustych kontaktów
+            if (NameTextBox.Text == null)
+                return;
+
              if (SocialButton.Checked)
              {
                  Contact.Social_Contact newContact;
 
                  newContact = new Contact.Social_Contact(list.Count(), "social", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneTextBox.Text);
-                 newContact.Photo_path = PhotoPathTextBox.Text;
+                 newContact.Photo_path = FilePathTextBox.Text; 
                  newContact.Birthday_date = Convert.ToString(BirthdayDatePicker.Text);
                  newContact.Facebook_page = FacebookTextBox.Text;
 
@@ -69,9 +86,9 @@ namespace Organizer
                  newContact.address.Street = StreetTextBox.Text;
                  newContact.address.Zip_code = ZipCodeTextBox.Text;
                  
+                 
                  list.Add(newContact);
                  cbf.ContactListView.Items.Add(newContact.Name + " " + newContact.Surname);
-
              }
              else if (BusinessButton.Checked)
              {
@@ -90,12 +107,21 @@ namespace Organizer
 
                  list.Add(newContact);
                  cbf.ContactListView.Items.Add(newContact.Name + " " + newContact.Surname);
-
              }
-
              //zamykanie forma po dodanie kontaktu
              this.Close();
              cbf.Show();
+        }
+        
+        private void AddPhotoBox_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                ofd.ShowDialog();
+                FilePathTextBox.Text = ofd.FileName;
+                UpdatePhotoBox(ofd.FileName);
+            }
         }
     }
 }
