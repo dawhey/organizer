@@ -323,7 +323,7 @@ namespace Organizer
             ContactPreviewBox.Enabled = true;
             DiscardButton.Visible = true;
             ApplyButton.Visible = true;
-
+            // wywalało unhandled expetion
             if (iterator.CurrentItem().Type == "business")
             {
                 Contact.Business_Contact bc = (Contact.Business_Contact)list.Get(iterator.getCurrentIndex());
