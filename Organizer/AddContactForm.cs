@@ -98,7 +98,7 @@ namespace Organizer
                  Contact.Business_Contact newContact;
 
                  newContact = new Contact.Business_Contact(list.Count(), "business", NameTextBox.Text, SurnameTextBox.Text, EmailTextBox.Text, PhoneTextBox.Text);
-                 newContact.Photo_path = PhotoPathTextBox.Text;                 
+                 newContact.Photo_path = FilePathTextBox.Text;                 
                  newContact.Business_phone = BusinessPhoneTextBox.Text;
                  newContact.Company_name = CompanyNameTextBox.Text;
                  newContact.Fax = FaxTextBox.Text;

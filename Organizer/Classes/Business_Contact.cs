@@ -7,7 +7,6 @@ using Organizer.Classes;
 
 
 namespace Contact {
-
 	public class Business_Contact : Contact  {
 
         public Business_Contact(int id, String type, String name, String surname, String email, String phone) : base(id, type, name, surname, email, phone) {}
@@ -19,7 +18,6 @@ namespace Contact {
             Surname = null;
             Email = null;
             Phone_number = null;
-            Type = null;
             company_name = null;
             fax = null;
             business_phone = null;
