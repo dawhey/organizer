@@ -279,6 +279,7 @@ namespace Organizer
                 ZipCodeTextBox.Text = scontact.address.Zip_code;
                 BirthdayTextBox.Text = scontact.Birthday_date;
                 FacebookTextBox.Text = scontact.Facebook_page;
+                PhotoTextBox.Text = scontact.Photo_path;
             }
             else
             {
@@ -296,6 +297,7 @@ namespace Organizer
                 CompanyNameTextBox.Text = scontact.Company_name;
                 FaxTextBox.Text = scontact.Fax;
                 BusinessPhoneTextBox.Text = scontact.Business_phone;
+                PhotoTextBox.Text = scontact.Photo_path;
             }
             ContactPreviewBox.Enabled = false;            
         }
@@ -323,7 +325,7 @@ namespace Organizer
             ContactPreviewBox.Enabled = true;
             DiscardButton.Visible = true;
             ApplyButton.Visible = true;
-            // wywalało unhandled expetion
+
             if (iterator.CurrentItem().Type == "business")
             {
                 Contact.Business_Contact bc = (Contact.Business_Contact)list.Get(iterator.getCurrentIndex());
@@ -334,6 +336,7 @@ namespace Organizer
                 Contact.Social_Contact sc = (Contact.Social_Contact)list.Get(iterator.getCurrentIndex());
                 m = sc.CreateMemento();
             }
+            
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)
