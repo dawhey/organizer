@@ -41,8 +41,6 @@
             this.PhoneTextBox = new System.Windows.Forms.TextBox();
             this.AddContactButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.PhotoPathTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.FilePathTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -92,7 +90,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(17, 95);
+            this.label2.Location = new System.Drawing.Point(17, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 25);
             this.label2.TabIndex = 1;
@@ -102,7 +100,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(17, 144);
+            this.label4.Location = new System.Drawing.Point(17, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 25);
             this.label4.TabIndex = 3;
@@ -112,7 +110,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(17, 195);
+            this.label5.Location = new System.Drawing.Point(17, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(175, 25);
             this.label5.TabIndex = 4;
@@ -165,7 +163,7 @@
             // SurnameTextBox
             // 
             this.SurnameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SurnameTextBox.Location = new System.Drawing.Point(210, 89);
+            this.SurnameTextBox.Location = new System.Drawing.Point(210, 96);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(247, 31);
             this.SurnameTextBox.TabIndex = 12;
@@ -173,7 +171,7 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EmailTextBox.Location = new System.Drawing.Point(210, 138);
+            this.EmailTextBox.Location = new System.Drawing.Point(210, 151);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(247, 31);
             this.EmailTextBox.TabIndex = 13;
@@ -181,7 +179,7 @@
             // PhoneTextBox
             // 
             this.PhoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PhoneTextBox.Location = new System.Drawing.Point(210, 189);
+            this.PhoneTextBox.Location = new System.Drawing.Point(210, 213);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(247, 31);
             this.PhoneTextBox.TabIndex = 14;
@@ -199,8 +197,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.PhotoPathTextBox);
-            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.PhoneTextBox);
             this.groupBox3.Controls.Add(this.EmailTextBox);
             this.groupBox3.Controls.Add(this.SurnameTextBox);
@@ -216,23 +212,6 @@
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Basic Informations";
-            // 
-            // PhotoPathTextBox
-            // 
-            this.PhotoPathTextBox.Location = new System.Drawing.Point(210, 232);
-            this.PhotoPathTextBox.Name = "PhotoPathTextBox";
-            this.PhotoPathTextBox.Size = new System.Drawing.Size(247, 29);
-            this.PhotoPathTextBox.TabIndex = 16;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(17, 236);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 25);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Foto path:";
             // 
             // groupBox4
             // 
@@ -537,8 +516,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.TextBox PhotoPathTextBox;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox FilePathTextBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox AddPhotoBox;

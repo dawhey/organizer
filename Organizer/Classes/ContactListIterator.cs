@@ -6,14 +6,12 @@ using System.Windows.Forms;
 
 namespace ContactList {
 	public class ContactListIterator : Iterator  {
-		//private List<Contact.Contact> _list;
+		
 		private int _current = 0;
         public ContactList _list;
 
-        // public ContactListIterator(List<Contact.Contact> list)
 		public ContactListIterator() {
             _list = ContactList.GetInstance();
-            //_list = list;
             _current = 0;
 		}
 		public override void First() {
