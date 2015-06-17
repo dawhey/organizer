@@ -317,7 +317,10 @@ namespace Organizer
                 list.Remove(ContactListView.SelectedItems[0].Index);
                 ContactListView.Items.Remove(ContactListView.SelectedItems[0]); 
             }
-            catch { }
+            catch 
+            {
+                MessageBox.Show("Remove contact", "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void ButtonEditContact_Click(object sender, EventArgs e)
@@ -335,8 +338,7 @@ namespace Organizer
             {
                 Contact.Social_Contact sc = (Contact.Social_Contact)list.Get(iterator.getCurrentIndex());
                 m = sc.CreateMemento();
-            }
-            
+            }            
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)
