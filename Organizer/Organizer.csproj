@@ -57,6 +57,7 @@
     <Compile Include="Classes\ContactList.cs" />
     <Compile Include="Classes\ContactListIterator.cs" />
     <Compile Include="Classes\Iterator.cs" />
+    <Compile Include="Classes\Memento.cs" />
     <Compile Include="Classes\Social_Contact.cs" />
     <Compile Include="ContactBookForm.cs">
       <SubType>Form</SubType>

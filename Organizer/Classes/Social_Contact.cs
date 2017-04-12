@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Organizer.Classes;
 
-
-namespace Contact {
-	public class Social_Contact : Contact  {
+namespace Contact
+{
+    public class Social_Contact : Contact  {
 
         public Social_Contact(int id, String type, String name, String surname, String email, String phone) : base(id, type, name, surname, email, phone) {}
         public Social_Contact()
@@ -59,7 +55,6 @@ namespace Contact {
             Facebook_page = m.Scontact.Facebook_page;
             Birthday_date = m.Scontact.Birthday_date;
         }
-
-	}
+    }
 
 }
